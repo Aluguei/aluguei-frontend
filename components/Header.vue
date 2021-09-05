@@ -1,32 +1,26 @@
 <template>
-  <v-card color="grey lighten-4" flat height="80px" tile>
-    <v-toolbar dense>
-      <div v-if="!signin" style="display: contents">
-        <img src="~assets/svg/avatar-logo.svg" />
-        <v-spacer></v-spacer>
-        <h3 class="text-logo">Aluguei</h3>
-      </div>
-    </v-toolbar>
-  </v-card>
+  <v-app-bar color='#1b6dc1' dark prominent style='position: relative;'>
+    <v-app-bar-nav-icon @click='drawer = !drawer'></v-app-bar-nav-icon>
+
+    <v-toolbar-title>Aluguei</v-toolbar-title>
+
+    <v-spacer></v-spacer>
+
+    <div>
+<!--      <v-toolbar absolute style='top: 65%;left: 50%; transform: translateX(-50%)'>-->
+<!--        <v-toolbar-items>-->
+<!--&lt;!&ndash;          <v-btn v-for='link in links' :key='link.title' :to='link.url' text>&ndash;&gt;-->
+<!--&lt;!&ndash;            <v-icon left>{{ link.icon }}</v-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;            {{ link.title }}&ndash;&gt;-->
+<!--&lt;!&ndash;          </v-btn>&ndash;&gt;-->
+<!--        </v-toolbar-items>-->
+<!--      </v-toolbar>-->
+    </div>
+  </v-app-bar>
 </template>
+
 <script>
 export default {
-  computed: {
-    signin() {
-      return this.$store.state.screen.signin;
-    },
-    signup1() {
-      return this.$store.state.screen.signup1;
-    },
-    signup2() {
-      return this.$store.state.screen.signup2;
-    },
-    signup3() {
-      return this.$store.state.screen.signup3;
-    },
-    signup4() {
-      return this.$store.state.screen.signup4;
-    },
-  },
-};
+  name: 'Header'
+}
 </script>

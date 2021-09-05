@@ -1,180 +1,180 @@
-$medium-blue: #0081ff;
-$white: #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black: #000;
-
-$blue: #1b6dc1;
-$cyan: #1ac1cd;
-$orange: #ff752c;
-$indigo: #6610f2;
-$purple: #6f42c1;
-$pink: #d63384;
-$red: #d61f22;
-$orange: #e0a433;
-$yellow: #ffc107;
-$green: #198754;
-$teal: #20c997;
-
-$fade: rgba(1, 1, 1, 0.2);
-$dark: #0c204d;
-$light: #fdf9ea;
-
-$blue-light: #007fff;
-$blue-dark: #183f99;
-
-$dark-100: tint-color($dark, 80%);
-$dark-200: tint-color($dark, 60%);
-$dark-300: tint-color($dark, 40%);
-$dark-400: tint-color($dark, 20%);
-$dark-500: $dark;
-$dark-600: shade-color($dark, 20%);
-$dark-700: shade-color($dark, 40%);
-$dark-800: shade-color($dark, 60%);
-$dark-900: shade-color($dark, 80%);
-
-$light-100: tint-color($light, 80%);
-$light-200: tint-color($light, 60%);
-$light-300: tint-color($light, 40%);
-$light-400: tint-color($light, 20%);
-$light-500: $light;
-$light-600: shade-color($light, 20%);
-$light-700: shade-color($light, 40%);
-$light-800: shade-color($light, 60%);
-$light-900: shade-color($light, 80%);
-
-$colors: (
-  "blue": $blue,
-  "indigo": $indigo,
-  "purple": $purple,
-  "pink": $pink,
-  "red": $red,
-  "orange": $orange,
-  "yellow": $yellow,
-  "green": $green,
-  "teal": $teal,
-  "cyan": $cyan,
-  "white": $white,
-  "gray": $gray-600,
-  "gray-dark": $gray-800,
-  "fade": $fade,
-  "dark": $dark,
-  "light": $light,
-);
-
-// Primary Colors
-$primary: $dark;
-$secondary: $orange;
-$success: #1dcc70;
-$danger: #ff396f;
-$warning: #ffb400;
-$info: #05d0a4;
-
-// Body Background
-$body-bg: $light;
-
-// Line Colors
-$color-line: $dark-300;
-
-// Text Colors
-$color-heading: $dark;
-$color-text: $dark;
-$color-light: $dark-300;
-
-// Border Radius
-$border-radius: 10px;
-
-// Safearea
-$safe-bottom: env(safe-area-inset-bottom);
-$safe-top: env(safe-area-inset-top);
-
-////////////////////////////////////////////////////
-// Dark Mode Colors
-////////////////////////////////////////////////////
-$darkmode_bodyBackground: #030108;
-$darkmode_contentBackground: #161129;
-$darkmode_color-heading: #fff;
-$darkmode_color-text: #7d86a9;
-$darkmode_color-light: #69587f;
-$darkmode_color-line: #2d1f3b;
-
-////////////////////////////////////////////////////
-// Font Sizes
-////////////////////////////////////////////////////
-// You can change font family in _font.scss
-$fontSizeHeadingXLarge: 32px;
-$fontSizeHeadingLarge: 20px;
-$fontSizeHeading: 17px;
-$fontSize: 15px;
-$fontSizeSub: 13px;
-$fontSizeCaption: 11px;
-
-$font-family-main: "Roboto", sans-serif;
-$font-family-logo: "Noto Sans JP", sans-serif;
-
-$body-line-height: 1.6rem;
-$body-letter-spacing: 0.004em;
-
-$min-contrast-ratio: 2;
-
-$input-btn-focus-width: 0;
-
-//$enable-negative-margins: true;
-
-$element-sizes: (
-  "xs": 0.5rem,
-  "sm": 1rem,
-  "md": 2rem,
-  "lg": 4rem,
-  "xl": 7rem,
-  "xxl": 10rem,
-);
-
-$form-body-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 800px,
-  xl: 800px,
-  xxl: 1000px,
-);
-
-$font-size: (
-  1: 0.5rem,
-  2: 0.7rem,
-  3: 1rem,
-  4: 1.2rem,
-  5: 1.5rem,
-  6: 1.8rem,
-  7: 2rem,
-  8: 2.2rem,
-  9: 2.5rem,
-  10: 2.8rem,
-  11: 3rem,
-  12: 3.2rem,
-  13: 3.5rem,
-  14: 3.8rem,
-);
-
-$vertical-align: (
-  1: super,
-  2: sub,
-);
-
-$font-weight: (
-  1: 100,
-  2: 200,
-  3: 300,
-  4: 400,
-  5: 500,
-  6: 600,
-  7: 700,
-  8: 800,
-  9: 900,
-);
+//$medium-blue: #0081ff;
+//$white: #fff;
+//$gray-100: #f8f9fa;
+//$gray-200: #e9ecef;
+//$gray-300: #dee2e6;
+//$gray-400: #ced4da;
+//$gray-500: #adb5bd;
+//$gray-600: #6c757d;
+//$gray-700: #495057;
+//$gray-800: #343a40;
+//$gray-900: #212529;
+//$black: #000;
+//
+//$blue: #1b6dc1;
+//$cyan: #1ac1cd;
+//$orange: #ff752c;
+//$indigo: #6610f2;
+//$purple: #6f42c1;
+//$pink: #d63384;
+//$red: #d61f22;
+//$orange: #e0a433;
+//$yellow: #ffc107;
+//$green: #198754;
+//$teal: #20c997;
+//
+//$fade: rgba(1, 1, 1, 0.2);
+//$dark: #0c204d;
+//$light: #fdf9ea;
+//
+//$blue-light: #007fff;
+//$blue-dark: #183f99;
+//
+//$dark-100: tint-color($dark, 80%);
+//$dark-200: tint-color($dark, 60%);
+//$dark-300: tint-color($dark, 40%);
+//$dark-400: tint-color($dark, 20%);
+//$dark-500: $dark;
+//$dark-600: shade-color($dark, 20%);
+//$dark-700: shade-color($dark, 40%);
+//$dark-800: shade-color($dark, 60%);
+//$dark-900: shade-color($dark, 80%);
+//
+//$light-100: tint-color($light, 80%);
+//$light-200: tint-color($light, 60%);
+//$light-300: tint-color($light, 40%);
+//$light-400: tint-color($light, 20%);
+//$light-500: $light;
+//$light-600: shade-color($light, 20%);
+//$light-700: shade-color($light, 40%);
+//$light-800: shade-color($light, 60%);
+//$light-900: shade-color($light, 80%);
+//
+//$colors: (
+//  "blue": $blue,
+//  "indigo": $indigo,
+//  "purple": $purple,
+//  "pink": $pink,
+//  "red": $red,
+//  "orange": $orange,
+//  "yellow": $yellow,
+//  "green": $green,
+//  "teal": $teal,
+//  "cyan": $cyan,
+//  "white": $white,
+//  "gray": $gray-600,
+//  "gray-dark": $gray-800,
+//  "fade": $fade,
+//  "dark": $dark,
+//  "light": $light,
+//);
+//
+//// Primary Colors
+//$primary: $dark;
+//$secondary: $orange;
+//$success: #1dcc70;
+//$danger: #ff396f;
+//$warning: #ffb400;
+//$info: #05d0a4;
+//
+//// Body Background
+//$body-bg: $light;
+//
+//// Line Colors
+//$color-line: $dark-300;
+//
+//// Text Colors
+//$color-heading: $dark;
+//$color-text: $dark;
+//$color-light: $dark-300;
+//
+//// Border Radius
+//$border-radius: 10px;
+//
+//// Safearea
+//$safe-bottom: env(safe-area-inset-bottom);
+//$safe-top: env(safe-area-inset-top);
+//
+//////////////////////////////////////////////////////
+//// Dark Mode Colors
+//////////////////////////////////////////////////////
+//$darkmode_bodyBackground: #030108;
+//$darkmode_contentBackground: #161129;
+//$darkmode_color-heading: #fff;
+//$darkmode_color-text: #7d86a9;
+//$darkmode_color-light: #69587f;
+//$darkmode_color-line: #2d1f3b;
+//
+//////////////////////////////////////////////////////
+//// Font Sizes
+//////////////////////////////////////////////////////
+//// You can change font family in _font.scss
+//$fontSizeHeadingXLarge: 32px;
+//$fontSizeHeadingLarge: 20px;
+//$fontSizeHeading: 17px;
+//$fontSize: 15px;
+//$fontSizeSub: 13px;
+//$fontSizeCaption: 11px;
+//
+//$font-family-main: "Roboto", sans-serif;
+//$font-family-logo: "Noto Sans JP", sans-serif;
+//
+//$body-line-height: 1.6rem;
+//$body-letter-spacing: 0.004em;
+//
+//$min-contrast-ratio: 2;
+//
+//$input-btn-focus-width: 0;
+//
+////$enable-negative-margins: true;
+//
+//$element-sizes: (
+//  "xs": 0.5rem,
+//  "sm": 1rem,
+//  "md": 2rem,
+//  "lg": 4rem,
+//  "xl": 7rem,
+//  "xxl": 10rem,
+//);
+//
+//$form-body-widths: (
+//  sm: 540px,
+//  md: 720px,
+//  lg: 800px,
+//  xl: 800px,
+//  xxl: 1000px,
+//);
+//
+//$font-size: (
+//  1: 0.5rem,
+//  2: 0.7rem,
+//  3: 1rem,
+//  4: 1.2rem,
+//  5: 1.5rem,
+//  6: 1.8rem,
+//  7: 2rem,
+//  8: 2.2rem,
+//  9: 2.5rem,
+//  10: 2.8rem,
+//  11: 3rem,
+//  12: 3.2rem,
+//  13: 3.5rem,
+//  14: 3.8rem,
+//);
+//
+//$vertical-align: (
+//  1: super,
+//  2: sub,
+//);
+//
+//$font-weight: (
+//  1: 100,
+//  2: 200,
+//  3: 300,
+//  4: 400,
+//  5: 500,
+//  6: 600,
+//  7: 700,
+//  8: 800,
+//  9: 900,
+//);

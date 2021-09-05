@@ -1,126 +1,126 @@
-@import "variables";
-
-body {
-  background-color: $blue;
-  font-family: $font-family-main;
-  font-weight: 700;
-}
-
-/* Layout */
-.flex-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container-box {
-  background-color: $white;
-  height: 300px;
-}
-
-.content-box {
-  background-color: $white;
-  color: $white;
-  text-align: center;
-  width: 375px;
-  padding: 40px 50px;
-  box-shadow: 1px 4px 9px -4px $black;
-  margin-top: 210px;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.flex {
-  display: flex;
-}
-
-
-/* Button */
-.btn-login {
-  width: 100%;
-  margin-top: 40px !important;
-  background-color: $blue !important;
-  color: $white !important;
-  font-weight: 800 !important;
-  height: 42px !important;
-}
-
-.btn-advanced {
-  width: 100%;
-  margin-top: 20px;
-  background-color: $blue !important;
-  color: white !important;
-  font-weight: 800 !important;
-}
-
-
-/* Header */
-header {
-  box-shadow: none !important;
-  height: 100px;
-}
-
-header div {
-  height: 100px !important;
-  padding: 4px 50px !important;
-}
-
-/* Text */
-.h2 {
-  color: $darkmode_color-text;
-  margin-bottom: 20px;
-}
-
-.p {
-  color: $darkmode_color-text;
-  text-align: left;
-}
-
-.link {
-  color: #7d86a9;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-
-/* Logo */
-.logo {
-  width: 140px;
-}
-
-.logo-header {
-  width: 70px;
-}
-
-.text-logo {
-  color: $blue;
-  font-size: 34px;
-  font-family: $font-family-logo;
-  font-weight: 600;
-}
-
-
-
-/* Icons */
-.left-arrow {
-  width: 25px;
-  float: left;
-  cursor: pointer;
-}
-
-
-/* Scroll */
-.scroll {
-  overflow-y: scroll;
-  height: 500px;
-}
-
-.scroll-loading {
-  height: 300px;
-}
+//@import "variables";
+//
+//body {
+//  //background-color: $blue;
+//  font-family: $font-family-main;
+//  font-weight: 700;
+//}
+//
+///* Layout */
+//.flex-box {
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+//
+//.container-box {
+//  background-color: $white;
+//  height: 300px;
+//}
+//
+//.content-box {
+//  background-color: $white;
+//  color: $white;
+//  text-align: center;
+//  width: 375px;
+//  padding: 40px 50px;
+//  box-shadow: 1px 4px 9px -4px $black;
+//  margin-top: 210px;
+//}
+//
+//.left {
+//  float: left;
+//}
+//
+//.right {
+//  float: right;
+//}
+//
+//.flex {
+//  display: flex;
+//}
+//
+//
+///* Button */
+//.btn-login {
+//  width: 100%;
+//  margin-top: 40px !important;
+//  background-color: $blue !important;
+//  color: $white !important;
+//  font-weight: 800 !important;
+//  height: 42px !important;
+//}
+//
+//.btn-advanced {
+//  width: 100%;
+//  margin-top: 20px;
+//  background-color: $blue !important;
+//  color: white !important;
+//  font-weight: 800 !important;
+//}
+//
+//
+///* Header */
+//header {
+//  box-shadow: none !important;
+//  height: 100px;
+//}
+//
+//header div {
+//  height: 100px !important;
+//  padding: 4px 50px !important;
+//}
+//
+///* Text */
+//.h2 {
+//  color: $darkmode_color-text;
+//  margin-bottom: 20px;
+//}
+//
+//.p {
+//  color: $darkmode_color-text;
+//  text-align: left;
+//}
+//
+//.link {
+//  color: #7d86a9;
+//  cursor: pointer;
+//  text-decoration: underline;
+//}
+//
+//
+///* Logo */
+//.logo {
+//  width: 140px;
+//}
+//
+//.logo-header {
+//  width: 70px;
+//}
+//
+//.text-logo {
+//  color: $blue;
+//  font-size: 34px;
+//  font-family: $font-family-logo;
+//  font-weight: 600;
+//}
+//
+//
+//
+///* Icons */
+//.left-arrow {
+//  width: 25px;
+//  float: left;
+//  cursor: pointer;
+//}
+//
+//
+///* Scroll */
+//.scroll {
+//  overflow-y: scroll;
+//  height: 500px;
+//}
+//
+//.scroll-loading {
+//  height: 300px;
+//}
