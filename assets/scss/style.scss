@@ -1,4 +1,10 @@
-@import "variables";
+@import 'variables';
+
+.background {
+  background: linear-gradient(white 40%, $blue 0%);
+  height: 100vh;
+  font-family: $font-family-main;
+}
 
 body {
   background-color: $blue;
@@ -11,11 +17,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.container-box {
-  background-color: $white;
-  height: 300px;
 }
 
 .content-box {
@@ -40,7 +41,6 @@ body {
   display: flex;
 }
 
-
 /* Button */
 .btn-login {
   width: 100%;
@@ -58,7 +58,6 @@ body {
   color: white !important;
   font-weight: 800 !important;
 }
-
 
 /* Header */
 header {
@@ -88,7 +87,6 @@ header div {
   text-decoration: underline;
 }
 
-
 /* Logo */
 .logo {
   width: 140px;
@@ -105,15 +103,12 @@ header div {
   font-weight: 600;
 }
 
-
-
 /* Icons */
 .left-arrow {
   width: 25px;
   float: left;
   cursor: pointer;
 }
-
 
 /* Scroll */
 .scroll {
