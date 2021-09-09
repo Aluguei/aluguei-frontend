@@ -12,10 +12,10 @@
           required
         ></v-text-field>
         <h4 class="link left">Esqueci a senha</h4>
-        <NuxtLink to="/registration"
+        <NuxtLink to="/cadastrar"
           ><h4 class="link right">Cadastrar</h4>
         </NuxtLink>
-        <v-btn class="mr-4 btn-login" type="submit" :disabled="invalid">
+        <v-btn class="mr-4 btn" type="submit" :disabled="invalid">
           Acessar
         </v-btn>
       </v-form>

@@ -46,6 +46,7 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/google-fonts',
     '@nuxtjs/svg',
+    '@nuxtjs/router'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -14,7 +14,7 @@
         <v-text-field v-model="neighborhood" :rules="neighborhoodRules" label="Bairro" required></v-text-field>
         <v-text-field v-model="number" :rules="numberRules" label="Nº" required></v-text-field>
         <v-text-field v-model="complement" :rules="complementRules" label="Complemento" required></v-text-field>
-        <v-btn class="mr-4 btn-advanced" type="submit" :disabled="invalid" @click="goForward"> Avançar </v-btn>
+        <v-btn class="mr-4 btn" type="submit" :disabled="invalid" @click="goForward"> Avançar </v-btn>
       </v-form>
     </div>
   </div>
