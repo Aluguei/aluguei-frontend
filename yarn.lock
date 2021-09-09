@@ -2415,7 +2415,7 @@
   optionalDependencies:
     "prettier" "^1.18.2"
 
-"@vue/test-utils@^1.2.1":
+"@vue/test-utils@^1.2.2":
   "integrity" "sha512-P+yiAsszoy8z1TqXiVUnAZaJj0WGGz5fCxm4bOSI6Cpwy1+PNYwYxDv0ROAA/SUtOPppV+aD8tp/QWwxf8ROJw=="
   "resolved" "https://registry.npmjs.org/@vue/test-utils/-/test-utils-1.2.2.tgz"
   "version" "1.2.2"
@@ -12507,7 +12507,7 @@
   "resolved" "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
   "version" "2.3.4"
 
-"vue-jest@^3.0.4":
+"vue-jest@^3.0.7":
   "integrity" "sha512-PIOxFM+wsBMry26ZpfBvUQ/DGH2hvp5khDQ1n51g3bN0TwFwTy4J85XVfxTRMukqHji/GnAoGUnlZ5Ao73K62w=="
   "resolved" "https://registry.npmjs.org/vue-jest/-/vue-jest-3.0.7.tgz"
   "version" "3.0.7"
