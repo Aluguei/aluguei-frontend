@@ -1,36 +1,45 @@
 <template>
-  <div class="flex-box container-box">
-    <div class="content-box">
-      <img src="@/assets/img/logo-aluguei-140x141.png" class="logo" />
-      
-      <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field v-model="email" label="E-mail" required></v-text-field>
+  <div class='flex-box container-box'>
+    <div class='content-box'>
+      <img src='@/assets/img/logo-aluguei-140x141.png' class='logo' />
+
+      <v-form ref='form' v-model='valid' lazy-validation>
+        <v-text-field v-model='email' :rules='emailRules' label='E-mail' required></v-text-field>
         <v-text-field
-          v-model="password"
-          type="password"
-          label="Senha"
+          v-model='password'
+          :rules='passwordRules'
+          type='password'
+          label='Senha'
           required
         ></v-text-field>
-         <NuxtLink to="/esqueci-a-senha">
-          <h4 class="link left">Esqueci a senha</h4>
+        <NuxtLink to='/esqueci-a-senha'>
+          <h4 class='link left'>Esqueci a senha</h4>
         </NuxtLink>
-        <NuxtLink to="/cadastrar"
-          ><h4 class="link right">Cadastrar</h4>
+        <NuxtLink to='/cadastrar'
+        ><h4 class='link right'>Cadastrar</h4>
         </NuxtLink>
-        <v-btn class="mr-4 btn" type="submit" :disabled="invalid">
+        <v-btn class='mr-4 btn' type='submit' :disabled='!valid'>
           Acessar
         </v-btn>
       </v-form>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data: () => ({
-    email: null,
-    password: null,
-    valid: null,
-    invalid: null,
-  }),
+    valid: false,
+    email: '',
+    emailRules: [
+      v => !!v || 'E-mail é obrigatório',
+      v => /.+@.+/.test(v) || 'E-mail deve ser válido'
+    ],
+    password: '',
+    passwordRules: [
+      v => !!v || 'Senha é obrigatório',
+      v => v.length >= 10 || 'Senha deve ser maior que 10 caracteres'
+    ],
+  })
 }
 </script>
