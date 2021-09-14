@@ -2,8 +2,7 @@
   <div class='flex-box container-box'>
     <div class='content-box'>
       <img src='@/assets/img/logo-aluguei-140x141.png' class='logo' />
-
-      <v-form ref='form' v-model='valid' lazy-validation>
+      <v-form ref='form' v-model='valid' lazy-validation @submit.prevent="userLogin">
         <v-text-field v-model='email' :rules='emailRules' label='E-mail' required></v-text-field>
         <v-text-field
           v-model='password'
@@ -40,6 +39,18 @@ export default {
       v => !!v || 'Senha é obrigatório',
       v => v.length >= 10 || 'Senha deve ser maior que 10 caracteres'
     ],
-  })
+  }),
+   methods: {
+    async userLogin() {
+      try {
+        const response = await this.$auth.loginWith('local', { data: this.login })
+        // eslint-disable-next-line no-console
+        console.log(response)
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.log(err)
+      }
+    }
+   }
 }
 </script>

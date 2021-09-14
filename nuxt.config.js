@@ -46,11 +46,11 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/google-fonts',
     '@nuxtjs/svg',
-    '@nuxtjs/router'
+    '@nuxtjs/router',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -68,4 +68,29 @@ export default {
       // svg-sprite-loader options
     },
   },
-}
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post' },
+          register: { url: '/api/auth/register', method: 'post' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          me: { url: '/api/auth/me', method: 'get' },
+          forgotPassword: { url: '/api/auth/request-forgot-password', method: 'post' },
+          resetPassword: { url: '/api/auth/reset-password', method: 'put' },
+        },
+      },
+    },
+  },
+};

@@ -1,13 +1,10 @@
 <template>
   <v-app>
     <div class="background">
-      <Categories />
+      <SignIn />
     </div>
   </v-app>
 </template>
 <script>
-export default {
-  // middleware: 'auth'
-  middleware: false
-}
+export default {}
 </script>

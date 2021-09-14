@@ -2,7 +2,9 @@
   <div class="flex-box container-box">
     <div class="content-box">
       <div class="flex">
-        <img src="@/assets/img/backArrow.png" class="left-arrow" @click="goBack" />
+        <NuxtLink to="/"> 
+          <img src="@/assets/img/backArrow.png" class="left-arrow"/>
+        </NuxtLink>
       </div>
       <h2 class="h2">Cadastro</h2>
       <p class="p">1. Dados para acesso</p>
