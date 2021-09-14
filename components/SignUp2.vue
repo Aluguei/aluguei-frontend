@@ -1,11 +1,11 @@
 <template>
-  <div class="flex-box container-box">
+  <div class="d-flex align-center justify-center container-box">
     <div class="content-box scroll">
-      <div class="flex">
-        <img src="@/assets/img/backArrow.png" class="left-arrow" @click="goBack" />
+      <div class="d-flex">
+        <img src="@/assets/img/backArrow.png" class="arrow cursor-pointer float-left" @click="goBack" />
       </div>
-      <h2 class="h2">Cadastro</h2>
-      <p class="p">2. Dados pessoais</p>
+      <h2>Cadastro</h2>
+      <p class="text-left">2. Dados pessoais</p>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="name" :rules="nameRules" label="Nome" required></v-text-field>
         <v-text-field v-model="lastName" :rules="lastNameRules" label="Sobrenome" required></v-text-field>

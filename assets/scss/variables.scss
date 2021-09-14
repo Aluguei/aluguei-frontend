@@ -1,5 +1,6 @@
 $medium-blue: #0081ff;
 $white: #fff;
+$gray: #7d86a9;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -51,22 +52,22 @@ $light-800: shade-color($light, 60%);
 $light-900: shade-color($light, 80%);
 
 $colors: (
-  "blue": $blue,
-  "indigo": $indigo,
-  "purple": $purple,
-  "pink": $pink,
-  "red": $red,
-  "orange": $orange,
-  "yellow": $yellow,
-  "green": $green,
-  "teal": $teal,
-  "cyan": $cyan,
-  "white": $white,
-  "gray": $gray-600,
-  "gray-dark": $gray-800,
-  "fade": $fade,
-  "dark": $dark,
-  "light": $light,
+  'blue': $blue,
+  'indigo': $indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'white': $white,
+  'gray': $gray-600,
+  'gray-dark': $gray-800,
+  'fade': $fade,
+  'dark': $dark,
+  'light': $light,
 );
 
 // Primary Colors
@@ -116,8 +117,8 @@ $fontSize: 15px;
 $fontSizeSub: 13px;
 $fontSizeCaption: 11px;
 
-$font-family-main: "Roboto", sans-serif;
-$font-family-logo: "Noto Sans JP", sans-serif;
+$font-family-main: 'Roboto', sans-serif;
+$font-family-logo: 'Noto Sans JP', sans-serif;
 
 $body-line-height: 1.6rem;
 $body-letter-spacing: 0.004em;
@@ -129,12 +130,12 @@ $input-btn-focus-width: 0;
 //$enable-negative-margins: true;
 
 $element-sizes: (
-  "xs": 0.5rem,
-  "sm": 1rem,
-  "md": 2rem,
-  "lg": 4rem,
-  "xl": 7rem,
-  "xxl": 10rem,
+  'xs': 0.5rem,
+  'sm': 1rem,
+  'md': 2rem,
+  'lg': 4rem,
+  'xl': 7rem,
+  'xxl': 10rem,
 );
 
 $form-body-widths: (
@@ -189,5 +190,5 @@ $width: (
   7: 70%,
   8: 80%,
   9: 90%,
-  10: 100%
+  10: 100%,
 );

@@ -1,5 +1,5 @@
 <template>
-  <div class='flex-box container-box'>
+  <div class='d-flex align-center justify-center container-box'>
     <div class='content-box'>
       <img src='@/assets/img/logo-aluguei-140x141.png' class='logo' />
       <v-form ref='form' v-model='valid' lazy-validation @submit.prevent="userLogin">
@@ -12,10 +12,10 @@
           required
         ></v-text-field>
         <NuxtLink to='/esqueci-a-senha'>
-          <h4 class='link left'>Esqueci a senha</h4>
+          <h4 class='link cursor-pointer text-decoration-underline float-left'>Esqueci a senha</h4>
         </NuxtLink>
         <NuxtLink to='/cadastrar'
-        ><h4 class='link right'>Cadastrar</h4>
+        ><h4 class='link cursor-pointer text-decoration-underline float-right'>Cadastrar</h4>
         </NuxtLink>
         <v-btn class='mr-4 btn' type='submit' :disabled='!valid'>
           Acessar

@@ -1,10 +1,10 @@
 <template>
-  <div class="flex-box container-box">
+  <div class="d-flex align-center justify-center container-box">
     <div class="content-box scroll-loading">
-      <div class="flex">
-        <img src="@/assets/img/backArrow.png" class="left-arrow" @click="goBack" />
+      <div class="d-flex">
+        <img src="@/assets/img/backArrow.png" class="arrow cursor-pointer float-left" @click="goBack" />
       </div>
-      <h2 class="h2">Cadastrando...</h2>
+      <h2>Cadastrando...</h2>
       <img src="@/assets/img/loading-logo.gif" />
     </div>
   </div>

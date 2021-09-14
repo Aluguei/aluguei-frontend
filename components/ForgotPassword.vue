@@ -1,12 +1,12 @@
 <template>
-  <div class="flex-box container-box">
+  <div class="d-flex align-center justify-center container-box">
     <div class="content-box">
-      <div class="flex">
+      <div class="d-flex">
         <NuxtLink to="/">
-          <img src="@/assets/img/backArrow.png" class="left-arrow" />
+          <img src="@/assets/img/backArrow.png" class="arrow cursor-pointer float-left" />
         </NuxtLink>
       </div>
-      <h2 class="h2">Esqueci a Senha</h2>
+      <h2>Esqueci a Senha</h2>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
           v-model="cpf"

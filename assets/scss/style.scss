@@ -1,57 +1,11 @@
 @import 'variables';
 
-.background {
-  background: linear-gradient(white 50%, $blue 0%);
-  height: 100vh;
-  font-family: $font-family-main;
-}
-
 body {
   background-color: $blue;
   font-family: $font-family-main;
   font-weight: 700;
 }
 
-/* Layout */
-.flex-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content-box {
-  background-color: $white;
-  color: $white;
-  text-align: center;
-  width: 375px;
-  padding: 40px 50px;
-  box-shadow: 1px 4px 9px -4px $black;
-  margin-top: 210px;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.flex {
-  display: flex;
-}
-
-/* Button */
-.btn{
-  width: 100%;
-  margin-top: 40px !important;
-  background-color: $blue !important;
-  color: $white !important;
-  font-weight: 800 !important;
-  height: 42px !important;
-}
-
-/* Header */
 header {
   box-shadow: none !important;
   height: 100px;
@@ -62,24 +16,44 @@ header div {
   padding: 4px 50px !important;
 }
 
-/* Text */
-.h2 {
+p {
+  color: $darkmode_color-text;
+}
+
+h2 {
   color: $darkmode_color-text;
   margin-bottom: 20px;
 }
 
-.p {
-  color: $darkmode_color-text;
-  text-align: left;
+.background {
+  background: linear-gradient($white 50%, $blue 0%);
+  height: 100vh;
+}
+
+.content-box {
+  background-color: $white;
+  color: $white;
+  text-align: center;
+  width: 375px;
+  padding: 40px 50px;
+  box-shadow: 1px 4px 9px -4px $black;
+  top: 20%;
+  position: absolute;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 40px !important;
+  background-color: $blue !important;
+  color: $white !important;
+  font-weight: 800 !important;
+  height: 42px !important;
 }
 
 .link {
-  color: #7d86a9;
-  cursor: pointer;
-  text-decoration: underline;
+  color: $gray;
 }
 
-/* Logo */
 .logo {
   width: 140px;
 }
@@ -95,14 +69,10 @@ header div {
   font-weight: 600;
 }
 
-/* Icons */
-.left-arrow {
+.arrow {
   width: 25px;
-  float: left;
-  cursor: pointer;
 }
 
-/* Scroll */
 .scroll {
   overflow-y: scroll;
   height: 500px;
@@ -110,4 +80,8 @@ header div {
 
 .scroll-loading {
   height: 300px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

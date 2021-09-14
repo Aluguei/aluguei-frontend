@@ -1,13 +1,13 @@
 <template>
-  <div class="flex-box container-box">
+  <div class="d-flex align-center justify-center container-box">
     <div class="content-box">
-      <div class="flex">
+      <div class="d-flex">
         <NuxtLink to="/"> 
-          <img src="@/assets/img/backArrow.png" class="left-arrow"/>
+          <img src="@/assets/img/backArrow.png" class="arrow cursor-pointer float-left"/>
         </NuxtLink>
       </div>
-      <h2 class="h2">Cadastro</h2>
-      <p class="p">1. Dados para acesso</p>
+      <h2>Cadastro</h2>
+      <p class="text-left">1. Dados para acesso</p>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
         <v-text-field v-model="password" :rules="passwordRules" label="Senha" required></v-text-field>
