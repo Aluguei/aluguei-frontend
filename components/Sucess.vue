@@ -18,7 +18,7 @@
         </v-card-actions>
         <v-card-title class="text-center" style="padding-top: 0;">
           <div style="margin-left: auto; margin-right: auto">
-            <v-icon style="color: #F00;font-size: 42px;">mdi-close-circle</v-icon>
+            <v-icon style="color: #1b6dc1;font-size: 42px;">mdi-thumb-up</v-icon>
           </div>
         </v-card-title>
 
@@ -28,8 +28,8 @@
     margin-top: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #F00;">Erro</h3>
-          <p class="text-center" style="font-size: 18px;color: #7D7D7D;">Me desculpe, não foi possível ser executado.</p>
+    color: #1b6dc1;">Sucesso</h3>
+          <p class="text-center" style="font-size: 18px;color: #7D7D7D;">Enviamos um e-mail com instruções.</p>
         </v-card-text>
 
         <v-divider></v-divider>

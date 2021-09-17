@@ -1,7 +1,8 @@
 <template>
   <v-app>
     <div class="background">
-      <SignIn />
+      <!-- <SignIn /> -->
+        <Error />
     </div>
   </v-app>
 </template>
