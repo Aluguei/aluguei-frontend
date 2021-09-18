@@ -2,9 +2,10 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import ForgotPassword from '~/pages/forgotPassword';
-// import Index from '~/pages/index';
+import Main from '~/pages/main';
 import Registration from '~/pages/registration';
 import Login from '~/pages/login';
+import Product from '~/pages/product'
 
 Vue.use(Router);
 
@@ -14,6 +15,10 @@ export function createRouter() {
     routes: [
       {
         path: '/',
+        component: Main,
+      },
+      {
+        path: '/login',
         component: Login,
       },
       {
@@ -23,6 +28,10 @@ export function createRouter() {
       {
         path: '/cadastrar',
         component: Registration,
+      },
+      {
+        path: '/produto',
+        component: Product,
       },
     ],
   });
