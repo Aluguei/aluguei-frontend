@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div class="background">
+    <div class="bg-linear-gradient">
       <div v-if="signup1">
         <SignUp1 />
       </div>
@@ -20,17 +20,17 @@
 export default {
   computed: {
     signup1() {
-      return this.$store.state.screen.signup1
+      return this.$store.state.screen.signup1;
     },
     signup2() {
-      return this.$store.state.screen.signup2
+      return this.$store.state.screen.signup2;
     },
     signup3() {
-      return this.$store.state.screen.signup3
+      return this.$store.state.screen.signup3;
     },
     signup4() {
-      return this.$store.state.screen.signup4
+      return this.$store.state.screen.signup4;
     },
   },
-}
+};
 </script>
