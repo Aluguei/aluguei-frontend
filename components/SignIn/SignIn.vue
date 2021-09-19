@@ -1,7 +1,7 @@
 <template>
   <div class='d-flex align-center justify-center container-box'>
     <div class='content-box'>
-      <img src='@/assets/img/logo-aluguei-140x141.png' class='logo' />
+      <img src='@/assets/img/logo/logo-aluguei-140x141.png' class='logo' />
       <v-form ref='form' v-model='valid' lazy-validation @submit.prevent="userLogin">
         <v-text-field v-model='email' :rules='emailRules' label='E-mail' required></v-text-field>
         <v-text-field
