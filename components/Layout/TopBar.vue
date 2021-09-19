@@ -1,20 +1,17 @@
 <template>
-  <v-card color="#1b6dc1" flat height="40px" tile class="d-flex">
-    <v-card-text class="color-white pa-0 font-weight-bold" style="margin: 0.6em 1em">
-      Frete grátis para todos os pedidos de acima de R$100,00</v-card-text>
-
-    <v-spacer></v-spacer>
+  <v-card color="#0066d0" flat height="40px" tile class="d-flex content-layout">
+    <v-card-text class="color-white pa-0 font-weight-regular top-bar-text"> Frete grátis para todos os pedidos acima de R$100,00.</v-card-text>
 
     <v-btn icon>
-      <v-icon class="color-white">mdi-facebook</v-icon>
+      <a target="_blank" href="https://api.whatsapp.com/send?phone=5519992558493">
+        <v-icon class="color-white">mdi-whatsapp</v-icon>
+      </a>
     </v-btn>
 
     <v-btn icon>
-      <v-icon class="color-white">mdi-whatsapp</v-icon>
-    </v-btn>
-
-    <v-btn icon>
-      <v-icon class="color-white">mdi-github</v-icon>
+      <a target="_blank" href="https://github.com/Aluguei">
+        <v-icon class="color-white">mdi-github</v-icon>
+      </a>
     </v-btn>
   </v-card>
 </template>
