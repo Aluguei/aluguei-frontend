@@ -3,9 +3,10 @@ import Router from 'vue-router';
 
 import ForgotPassword from '~/pages/forgotPassword';
 import Main from '~/pages/main';
-import Registration from '~/pages/registration';
+import Register from '~/pages/register';
 import Login from '~/pages/login';
-import Product from '~/pages/product'
+import ProductDetails from '~/pages/productDetails';
+import ProductAdvertise from '~/pages/productAdvertise';
 
 Vue.use(Router);
 
@@ -27,11 +28,15 @@ export function createRouter() {
       },
       {
         path: '/cadastrar',
-        component: Registration,
+        component: Register,
       },
       {
-        path: '/produto',
-        component: Product,
+        path: '/detalhes-produto',
+        component: ProductDetails,
+      },
+      {
+        path: '/anunciar-produto',
+        component: ProductAdvertise,
       },
     ],
   });
