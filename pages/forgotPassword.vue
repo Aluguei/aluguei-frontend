@@ -1,12 +1,10 @@
 <template>
   <v-app>
-    <div class="background">
+    <div class="bg-linear-gradient">
       <ForgotPassword />
     </div>
   </v-app>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>
