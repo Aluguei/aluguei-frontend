@@ -1,5 +1,3 @@
-@import 'variables';
-
 body {
   background-color: $blue;
   font-family: $font-family-main;
@@ -20,70 +18,57 @@ p {
   color: $darkmode_color-text;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
 h2 {
   color: $darkmode_color-text;
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-.background {
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+.bg-linear-gradient {
   background: linear-gradient($white 50%, $blue 0%);
   height: 100vh;
-}
-
-.content-box {
-  background-color: $white;
-  color: $white;
-  text-align: center;
-  width: 375px;
-  padding: 40px 50px;
-  box-shadow: 1px 4px 9px -4px $black;
-  top: 20%;
-  position: absolute;
-}
-
-.btn {
-  width: 100%;
-  margin-top: 40px !important;
-  background-color: $blue !important;
-  color: $white !important;
-  font-weight: 800 !important;
-  height: 42px !important;
-}
-
-.link {
-  color: $gray;
-}
-
-.logo {
-  width: 140px;
-}
-
-.logo-header {
-  width: 70px;
-}
-
-.text-logo {
-  color: $blue;
-  font-size: 34px;
-  font-family: $font-family-logo;
-  font-weight: 600;
-}
-
-.arrow {
-  width: 25px;
-}
-
-.scroll {
-  overflow-y: scroll;
-  height: 500px;
-}
-
-.scroll-loading {
-  height: 300px;
 }
 
 .cursor-pointer {
   cursor: pointer;
 }
 
-.color-white{ color: $white !important}
+.color-white {
+  color: $white;
+}
+
+.color-black {
+  color: $black;
+}
+
+.bg-gray {
+  background-color: $gray-light;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.fb-50 {
+  flex-basis: 50%;
+}
