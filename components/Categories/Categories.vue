@@ -25,7 +25,7 @@ export default {
         { backgroundColor: '#51acf6' },
         { backgroundColor: '#ffb61b' },
       ],
-      icon: ['mdi-car-multiple', 'mdi-microsoft-xbox-controller', 'mdi-hospital', 'mdi-fan', 'mdi-shoe-heel'],
+      icon: ['mdi-car-multiple', 'mdi-microsoft-xbox-controller', 'mdi-hospital-box', 'mdi-fan', 'mdi-shoe-heel'],
       name: ['Veículo', 'Tecnologia', 'Saude', 'Eletrodoméstico', 'Moda'],
       description: ['Diversos veículos', 'Produtos de tecnoloia', 'Produtos de saúde', 'As melhores ofertas ', 'Produtos de moda'],
     };
