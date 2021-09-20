@@ -1,7 +1,7 @@
 body {
   background-color: $blue;
   font-family: $font-family-main;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 header {
@@ -16,6 +16,7 @@ header div {
 
 p {
   color: $darkmode_color-text;
+  font-size: 1rem;
 }
 
 h1 {
@@ -54,21 +55,84 @@ h6 {
 }
 
 .color-white {
-  color: $white;
+  color: $white !important;
 }
 
 .color-black {
-  color: $black;
+  color: $black !important;
 }
 
 .bg-gray {
-  background-color: $gray-light;
+  background-color: $gray-light !important;
 }
 
 .bg-white {
-  background-color: $white;
+  background-color: $white !important;
+}
+
+.bg-blue-medium {
+  background-color: $blue-medium !important;
+}
+
+.fb-80 {
+  flex-basis: 80%;
+}
+
+.fb-60 {
+  flex-basis: 60%;
 }
 
 .fb-50 {
   flex-basis: 50%;
+}
+
+.fb-25 {
+  flex-basis: 25%;
+}
+
+.fb-20 {
+  flex-basis: 20% !important;
+}
+
+.fb-15 {
+  flex-basis: 15%;
+}
+
+.b-blue-medium {
+  border-color: $blue-medium !important;
+}
+
+.height-auto {
+  height: auto !important;
+}
+
+.w-65 {
+  width: 65%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.br-50 {
+  border-radius: 50%;
+}
+
+.bs-none {
+  box-shadow: none !important;
+}
+.bg-none {
+  background: none !important;
+}
+
+.fs-small {
+  font-size: 0.9rem !important;
+}
+
+.color-orange {
+  color: $orange !important;
+}
+
+.color-gray {
+  color: $gray !important;
 }
