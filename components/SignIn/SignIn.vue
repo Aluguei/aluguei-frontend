@@ -17,7 +17,7 @@
         <NuxtLink to='/cadastrar'
         ><h4 class='link cursor-pointer text-decoration-underline float-right'>Cadastrar</h4>
         </NuxtLink>
-        <v-btn class='mr-4 btn' type='submit' :disabled='!valid'>
+        <v-btn class='mr-4 btn mt-10 color-white' type='submit' :disabled='!valid'>
           Acessar
         </v-btn>
       </v-form>

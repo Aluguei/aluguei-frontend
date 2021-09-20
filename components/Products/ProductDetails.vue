@@ -18,7 +18,7 @@
           <p class="mb-1"><span class="font-weight-bold color-black">Nome: </span> {{ advertiser.name }}</p>
           <p class="mb-1"><span class="font-weight-bold color-black">Estado: </span>{{ advertiser.state }}</p>
           <p class="mb-1"><span class="font-weight-bold color-black">Cidade: </span>{{ advertiser.city }}</p>
-          <v-btn class="mr-4 btn">Alugar</v-btn>
+          <v-btn class="mr-4 btn mt-10">Alugar</v-btn>
         </div>
       </div>
     </div>

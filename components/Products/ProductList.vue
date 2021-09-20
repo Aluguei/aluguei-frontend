@@ -10,7 +10,7 @@
             <p class="fs-small mb-2">{{ item.category }}</p>
             <h4 class="mb-3">{{ item.name }}</h4>
             <h6 class="color-orange">{{ item.value }}</h6>
-            <v-btn class="mr-4 btn" type="button"> Alugar </v-btn>
+            <v-btn class="mr-4 btn mt-10 color-white" type="button"> Alugar </v-btn>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>

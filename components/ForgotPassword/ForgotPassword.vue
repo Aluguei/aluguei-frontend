@@ -10,7 +10,7 @@
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="cpf" v-mask="'###.###.###-##'" label="CPF" required></v-text-field>
         <the-mask :mask="['###.###.###-##', '##.###.###/####-##']" />
-        <v-btn class="mr-4 btn" type="submit" :disabled="invalid"> Enviar </v-btn>
+        <v-btn class="mr-4 btn mt-10 color-white" type="submit" :disabled="invalid"> Enviar </v-btn>
       </v-form>
     </div>
   </div>

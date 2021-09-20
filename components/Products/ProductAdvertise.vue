@@ -9,7 +9,7 @@
         </v-card>
         <v-text-field v-model="name" :rules="nameRules" label="Nome" required></v-text-field>
         <v-text-field v-model="description" :rules="descriptionRules" label="Descrição" required></v-text-field>
-        <v-btn class="mr-4 btn" type="submit"> Anunciar </v-btn>
+        <v-btn class="mr-4 btn mt-10 color-white" type="submit"> Anunciar </v-btn>
       </v-form>
     </div>
   </div>

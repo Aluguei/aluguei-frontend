@@ -13,7 +13,7 @@
         <v-text-field v-model="cpf" :rules="cpfRules" label="CPF" required></v-text-field>
         <v-select :items="gender" label="Sexo"></v-select>
 
-        <v-btn class="mr-4 btn" type="submit" :disabled="invalid" @click="goForward"> Avançar </v-btn>
+        <v-btn class="mr-4 btn mt-10 color-white" type="submit" :disabled="invalid" @click="goForward"> Avançar </v-btn>
       </v-form>
     </div>
   </div>
