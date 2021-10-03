@@ -6,7 +6,7 @@
           <img src="@/assets/img/icons/backArrow.png" class="arrow cursor-pointer float-left"/>
         </NuxtLink>
       </div>
-      <h2>Cadastro</h2>
+      <h3 class="color-gray mb-4">Cadastro</h3>
       <p class="text-left">1. Dados para acesso</p>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>

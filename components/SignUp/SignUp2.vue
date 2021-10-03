@@ -4,7 +4,7 @@
       <div class="d-flex">
         <img src="@/assets/img/icons/backArrow.png" class="arrow cursor-pointer float-left" @click="goBack" />
       </div>
-      <h2>Cadastro</h2>
+      <h3 class="color-gray mb-4">Cadastro</h3>
       <p class="text-left">2. Dados pessoais</p>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="name" :rules="nameRules" label="Nome" required></v-text-field>

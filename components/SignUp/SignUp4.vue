@@ -4,7 +4,7 @@
       <div class="d-flex">
         <img src="@/assets/img/icons/backArrow.png" class="arrow cursor-pointer float-left" @click="goBack" />
       </div>
-      <h2>Cadastrando...</h2>
+      <h3 class="color-gray mb-4">Cadastrando...</h3>
       <img src="@/assets/img/logo/loading-logo.gif" />
     </div>
   </div>

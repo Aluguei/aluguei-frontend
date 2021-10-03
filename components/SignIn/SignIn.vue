@@ -12,10 +12,10 @@
           required
         ></v-text-field>
         <NuxtLink to='/esqueci-a-senha'>
-          <h4 class='link cursor-pointer text-decoration-underline float-left'>Esqueci a senha</h4>
+          <p class='link cursor-pointer text-decoration-underline float-left'>Esqueci a senha</p>
         </NuxtLink>
         <NuxtLink to='/cadastrar'
-        ><h4 class='link cursor-pointer text-decoration-underline float-right'>Cadastrar</h4>
+        ><p class='link cursor-pointer text-decoration-underline float-right'>Cadastrar</p>
         </NuxtLink>
         <v-btn class='mr-4 btn mt-10 color-white' type='submit' :disabled='!valid'>
           Acessar
