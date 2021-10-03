@@ -76,7 +76,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/proxy'],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -85,6 +85,28 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  axios: {
+    baseURL: 'https://aluguei-backend.herokuapp.com/',
+    proxy: true
+  },
+
+  proxy: {
+    // Simple proxy
+    '/api': 'https://aluguei-backend.herokuapp.com/',
+
+    // With options
+    '/api2': {
+      target: 'https://aluguei-backend.herokuapp.com/',
+      ws: false
+    },
+
+    // Proxy to backend unix socket
+    '/api3': {
+      changeOrigin: false,
+      target: { socketPath: '/var/run/http-sockets/backend.sock' }
+    }
+  },
 
   svg: {
     vueSvgLoader: {
@@ -119,4 +141,8 @@ export default {
       },
     },
   },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://aluguei-backend.herokuapp.com/'
+  }
 };

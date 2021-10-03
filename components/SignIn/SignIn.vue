@@ -3,9 +3,9 @@
     <div class='content-box'>
       <img src='@/assets/img/logo/logo-aluguei-140x141.png' class='logo' />
       <v-form ref='form' v-model='valid' lazy-validation @submit.prevent="userLogin">
-        <v-text-field v-model='email' :rules='emailRules' label='E-mail' required></v-text-field>
+        <v-text-field v-model='login.email' :rules='emailRules' label='E-mail' required></v-text-field>
         <v-text-field
-          v-model='password'
+          v-model='login.password'
           :rules='passwordRules'
           type='password'
           label='Senha'
@@ -28,16 +28,18 @@
 <script>
 export default {
   data: () => ({
+    login: {
+      email: '',
+      password: '',
+    },
     valid: false,
-    email: '',
     emailRules: [
       v => !!v || 'E-mail é obrigatório',
       v => /.+@.+/.test(v) || 'E-mail deve ser válido'
     ],
-    password: '',
     passwordRules: [
       v => !!v || 'Senha é obrigatório',
-      v => v.length >= 10 || 'Senha deve ser maior que 10 caracteres'
+      v => v.length >= 3 || 'Senha deve ser maior que 10 caracteres'
     ],
   }),
    methods: {
