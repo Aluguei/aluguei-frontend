@@ -3,8 +3,6 @@
   border-width: 1px;
   border-color: #e4e4e4;
   border-radius: 30px;
-  overflow: hidden;
-  min-height: 44px;
 }
 
 .link {
@@ -72,6 +70,19 @@
   margin: 0.6em 1em;
 }
 
-.description-category {
-  font-size: 0.9rem;
+.circle{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.icon-category{
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }

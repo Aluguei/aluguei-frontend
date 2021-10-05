@@ -75,8 +75,12 @@ export default {
     '@nuxtjs/router',
   ],
 
+  // router: {
+  //   middleware: ['auth']
+  // },
+
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/proxy'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/proxy', '@nuxt/http'],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -105,7 +109,7 @@ export default {
     '/api3': {
       changeOrigin: false,
       target: { socketPath: '/var/run/http-sockets/backend.sock' }
-    }
+    },
   },
 
   svg: {
@@ -121,7 +125,7 @@ export default {
     strategies: {
       local: {
         token: {
-          property: 'token',
+          property: 'accessToken',
           global: true,
           // required: true,
           // type: 'Bearer'
@@ -134,7 +138,7 @@ export default {
           login: { url: '/api/auth/login', method: 'post' },
           register: { url: '/api/auth/register', method: 'post' },
           logout: { url: '/api/auth/logout', method: 'post' },
-          me: { url: '/api/auth/me', method: 'get' },
+          user: { url: '/api/auth/me', method: 'get' },
           forgotPassword: { url: '/api/auth/request-forgot-password', method: 'post' },
           resetPassword: { url: '/api/auth/reset-password', method: 'put' },
         },

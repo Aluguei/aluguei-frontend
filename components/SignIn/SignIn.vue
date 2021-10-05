@@ -1,3 +1,4 @@
+/* eslint-disable vue/this-in-template */
 <template>
   <div class='d-flex align-center justify-center container-box'>
     <div class='content-box'>
@@ -48,6 +49,7 @@ export default {
         const response = await this.$auth.loginWith('local', { data: this.login })
         // eslint-disable-next-line no-console
         console.log(response)
+        // this.$router.push('/')
       } catch (err) {
         // eslint-disable-next-line no-console
         console.log(err)

@@ -1,13 +1,13 @@
 <template>
-  <v-row class="d-flex content-layout py-6 px-8">
+  <v-row class="d-flex content-layout py-6 ">
     <v-col v-for="n in 5" :key="n" cols="5" class="fb-20">
       <div class="d-flex">
-        <div class="mr-4 pa-4 br-50 fb-25" :style="style[n - 1]">
-          <v-icon class="color-white">{{ icon[n - 1] }} </v-icon>
+        <div class="circle" :style="style[n - 1]">
+          <v-icon class="color-white icon-category">{{ icon[n - 1] }} </v-icon>
         </div>
-        <div>
+        <div class="ml-3">
           <h6>{{ name[n - 1] }}</h6>
-          <p class="description-category">{{ description[n - 1] }}</p>
+          <p>{{ description[n - 1] }}</p>
         </div>
       </div>
     </v-col>

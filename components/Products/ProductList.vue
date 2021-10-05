@@ -1,6 +1,7 @@
 <template>
   <v-card class="d-flex bs-none bg-white rounded ma-8 pa-7" tile>
-    <v-list dense class="bg-none bs-none">
+    <v-list dense class="bg-none bs-none pa-0">
+      <h4 class="mb-6">Lista de Produtos</h4>
       <v-list-item-group color="primary" class="d-flex">
         <v-list-item v-for="(item, i) in items" :key="i" class="col-product">
           <v-list-item-content>
@@ -19,14 +20,23 @@
 </template>
 <script>
 export default {
-  data: () => ({
+  data() {
+    return {
+      items: [{ name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
+       { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
+      { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
+      { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },]
+    }
     // selectedItem: 1,
-    items: [
-      { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
-      { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
-      { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
-      { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
-    ],
-  }),
+    // items: [
+    //   { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
+    //   { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
+    //   { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
+    //   { name: 'Telecaster', value: '$89/hour', img: '/_nuxt/assets/img/products/guitar/guitar-01-1.webp', category: 'Instrumento Musical' },
+    // ],
+  },
+  async fetch() {
+      this.items = await fetch('https://aluguei-backend.herokuapp.com/api/products/owned').then(res => res.json());
+  },
 };
 </script>

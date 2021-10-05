@@ -1,19 +1,24 @@
 <template>
   <v-carousel v-model="model" class="content-layout" hide-delimiter-background>
-    <v-carousel-item v-for="(color, i) in colors" :key="color">
-      <v-sheet :color="color" height="100%" tile>
-        <v-row class="fill-height" align="center" justify="center">
-          <div class="text-h2">Slide {{ i + 1 }}</div>
-        </v-row>
-      </v-sheet>
-    </v-carousel-item>
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="require(`~/assets/img/banner/${item.src}.jpg`)"
+      reverse-transition="fade-transition"
+      transition="fade-transition"
+    ></v-carousel-item>
   </v-carousel>
 </template>
 <script>
 export default {
-  data: () => ({
-    model: 0,
-    colors: ['#9c9c9c', '#9c9c9c', '#9c9c9c'],
-  }),
+  data(){
+    return {
+    items: [
+          {
+            src: 'banner-1',
+          },
+        ],
+    }
+  }
 };
 </script>

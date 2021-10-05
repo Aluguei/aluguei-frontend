@@ -2,6 +2,7 @@
   <div class="search bg-white d-flex">
     <v-autocomplete
       v-model="select"
+      append-icon=""
       :loading="loading"
       :items="items"
       :search-input.sync="search"
