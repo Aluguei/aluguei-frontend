@@ -3,7 +3,7 @@
     <div class="content-box">
       <div class="d-flex">
         <NuxtLink to="/"> 
-          <img src="@/assets/img/icons/backArrow.png" class="arrow cursor-pointer float-left"/>
+          <img src="@/assets/img/icons/back-arrow.png" class="arrow cursor-pointer float-left"/>
         </NuxtLink>
       </div>
       <h3 class="color-gray mb-4">Cadastro</h3>

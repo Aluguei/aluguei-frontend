@@ -2,7 +2,7 @@
   <div class="d-flex align-center justify-center container-box">
     <div class="content-box scroll">
       <div class="d-flex">
-        <img src="@/assets/img/icons/backArrow.png" class="arrow cursor-pointer float-left" @click="goBack" />
+        <img src="@/assets/img/icons/back-arrow.png" class="arrow cursor-pointer float-left" @click="goBack" />
       </div>
       <h3 class="color-gray mb-4">Cadastro</h3>
       <p class="text-left">2. Dados pessoais</p>
