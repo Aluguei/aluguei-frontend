@@ -6,7 +6,7 @@
           <img src="@/assets/img/icons/back-arrow.png" class="arrow cursor-pointer float-left" />
         </NuxtLink>
       </div>
-      <h2>Esqueci a Senha</h2>
+      <h3 class="color-gray mb-4">Esqueci a Senha</h3>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="cpf" v-mask="'###.###.###-##'" label="CPF" required></v-text-field>
         <the-mask :mask="['###.###.###-##', '##.###.###/####-##']" />
