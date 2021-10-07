@@ -14,6 +14,7 @@
           <v-icon class="color-white">mdi mdi-account</v-icon>
         </v-btn>
         <p class="color-white">{{ $auth.user.firstName }}</p>
+        <a class="color-white mb-4 ml-2" @click="$auth.logout()"> Sair</a>
       </div>
       <div v-else class="d-flex">
         <nuxt-link to="/login" class="color-white mb-5 text-decoration-none"

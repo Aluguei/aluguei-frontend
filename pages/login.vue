@@ -8,13 +8,9 @@ export default {
   methods: {
     async loginUser(loginInfo) {
       try {
-        await this.$auth
-          .loginWith("local", {
-            data: loginInfo,
-          })
-          .then(() => {
-            alert("Foi");
-          });
+        await this.$auth.loginWith("local", {
+          data: loginInfo,
+        });
         // this.$store.dispatch("snackbar/setSnackbar", {
         //   text: `Thanks for signin in", ${this.$auth.user}`,
         // });
