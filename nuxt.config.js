@@ -131,14 +131,14 @@ export default {
           // type: 'Bearer'
         },
         user: {
-          property: 'user',
-          // autoFetch: true
+          property: false,
+          autoFetch: true
         },
         endpoints: {
           login: { url: '/api/auth/login', method: 'post' },
           register: { url: '/api/auth/register', method: 'post' },
           logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/auth/me', method: 'get' },
+          user: { url: '/api/auth/me', method: 'get', headers: { 'device': 'mobile' }, propertyName: false },
           forgotPassword: { url: '/api/auth/request-forgot-password', method: 'post' },
           resetPassword: { url: '/api/auth/reset-password', method: 'put' },
         },

@@ -1,13 +1,9 @@
 <template>
-  <div>
-    <!-- <div v-if="$auth.loggedIn">
-      {{$auth.user.email}}
-    </div>
-     <div v-else>
-      <p class="color-white">Não logado</p>
-    </div> -->
-    <Nuxt />
-  </div>
+  <v-app>
+    <v-main>
+      <Nuxt />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
