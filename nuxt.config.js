@@ -92,7 +92,7 @@ export default {
 
   axios: {
     baseURL: 'https://aluguei-backend.herokuapp.com/',
-    proxy: true
+    proxy: true,
   },
 
   proxy: {
@@ -127,8 +127,8 @@ export default {
         token: {
           property: 'accessToken',
           global: true,
-          // required: true,
-          // type: 'Bearer'
+          required: true,
+          type: 'Bearer'
         },
         user: {
           property: false,

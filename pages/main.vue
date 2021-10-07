@@ -5,7 +5,7 @@
       <HeaderMain />
       <Categories />
       <Banner />
-      <ProductList />
+      <ProductListAvailable />
     </div>
   </v-app>
 </template>
