@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <div class="bg-linear-gradient">
-      <v-form>
       <div v-if="signup1">
         <SignUp1 />
       </div>
@@ -14,7 +13,6 @@
       <div v-else-if="signup4">
         <SignUp4 />
       </div>
-      </v-form>
     </div>
   </v-app>
 </template>

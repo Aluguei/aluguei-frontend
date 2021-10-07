@@ -11,15 +11,8 @@ export default {
         await this.$auth.loginWith("local", {
           data: loginInfo,
         });
-        // this.$store.dispatch("snackbar/setSnackbar", {
-        //   text: `Thanks for signin in", ${this.$auth.user}`,
-        // });
-        // this.$router.push("/");
+        this.$router.push("/");
       } catch (err) {
-        // this.$store.dispatch("snackbar/setSnackbar", {
-        //   color: "red",
-        //   text: "There was an issue signing in. Please again.",
-        // });
         console.error(err);
       }
     },
