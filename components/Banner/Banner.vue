@@ -1,7 +1,7 @@
 <template>
-  <v-carousel v-model="model" class="content-layout" hide-delimiter-background>
+  <v-carousel class="content-layout" hide-delimiter-background>
     <v-carousel-item
-      v-for="(item,i) in items"
+      v-for="(item, i) in items"
       :key="i"
       :src="require(`~/assets/img/banner/${item.src}.jpg`)"
       reverse-transition="fade-transition"
@@ -11,14 +11,14 @@
 </template>
 <script>
 export default {
-  data(){
+  data() {
     return {
-    items: [
-          {
-            src: 'banner-1',
-          },
-        ],
-    }
-  }
+      items: [
+        {
+          src: "banner-1",
+        },
+      ],
+    };
+  },
 };
 </script>
