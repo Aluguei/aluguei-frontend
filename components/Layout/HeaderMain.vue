@@ -1,7 +1,7 @@
 <template>
   <v-card flat height="150px" tile class="bg-blue-medium py-4 px-8 d-flex">
     <div class="fb-15">
-      <img src="~assets/svg/logo-white.svg" class="w-65" />
+      <img src="~assets/svg/logo-white.svg" class="logo-white" />
     </div>
     <div class="fb-60 mt-4 mr-7">
       <Search />
@@ -14,7 +14,7 @@
           <v-icon class="color-white">mdi mdi-account</v-icon>
         </v-btn>
         <p class="color-white">{{ $auth.user.firstName }}</p>
-        <a class="color-white mb-4 ml-2" @click="$auth.logout()"> Sair</a>
+        <a class="color-white mb-4 ml-2" @click="logoutUser()"> Sair</a>
       </div>
       <div v-else class="d-flex">
         <nuxt-link to="/login" class="color-white mb-5 text-decoration-none"
@@ -39,6 +39,12 @@ export default {
     return {
       valueCart: "R$ 0,00",
     };
+  },
+  methods: {
+    logoutUser() {
+      this.$auth.logout();
+      this.$router.push("/login");
+    },
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-center justify-center container-box">
+  <div class="d-flex align-center justify-center">
     <div class="content-box">
       <h2>Anunciar Produto</h2>
       <v-form @submit.prevent="submitForm(productInfo)">
