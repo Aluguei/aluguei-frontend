@@ -10,7 +10,11 @@
 }
 
 .logo {
-  width: 140px;
+  width: 9rem;
+}
+
+.logo-white{
+  width: 7.8rem;
 }
 
 .logo-header {
@@ -39,13 +43,12 @@
 
 .content-box {
   background-color: $white;
-  color: $white;
   text-align: center;
-  width: 375px;
   padding: 40px 50px;
   box-shadow: 1px 4px 9px -4px $black;
-  top: 15%;
+  top: 20%;
   position: absolute;
+  width: 24rem;
 }
 
 .col-product:hover {
