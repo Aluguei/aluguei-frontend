@@ -141,6 +141,8 @@ export default {
           user: { url: '/api/auth/me', method: 'get', headers: { 'device': 'mobile' }, propertyName: false },
           forgotPassword: { url: '/api/auth/request-forgot-password', method: 'post' },
           resetPassword: { url: '/api/auth/reset-password', method: 'put' },
+          productsAvailable: { url: '/api/products/available', method: 'get' },
+          productsOwned: { url: '/api/products/owned', method: 'get' },
         },
       },
     },

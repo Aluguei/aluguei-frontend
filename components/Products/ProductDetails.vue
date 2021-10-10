@@ -15,10 +15,18 @@
           <h4 class="font-weight-bold color-black">Descrição</h4>
           <p class="mb-5">{{ description }}</p>
           <h4 class="font-weight-bold color-black">Anunciante</h4>
-          <p class="mb-1"><span class="font-weight-bold color-black">Nome: </span> {{ advertiser.name }}</p>
-          <p class="mb-1"><span class="font-weight-bold color-black">Estado: </span>{{ advertiser.state }}</p>
-          <p class="mb-1"><span class="font-weight-bold color-black">Cidade: </span>{{ advertiser.city }}</p>
-          <v-btn class="mr-4 btn mt-10">Alugar</v-btn>
+          <p class="mb-1">
+            <span class="font-weight-bold color-black">Nome: </span> {{ advertiser.name }}
+          </p>
+          <p class="mb-1">
+            <span class="font-weight-bold color-black">Estado: </span
+            >{{ advertiser.state }}
+          </p>
+          <p class="mb-1">
+            <span class="font-weight-bold color-black">Cidade: </span
+            >{{ advertiser.city }}
+          </p>
+          <v-btn class="mr-4 btn mt-10 color-white">Alugar</v-btn>
         </div>
       </div>
     </div>
@@ -28,17 +36,17 @@
 export default {
   data() {
     return {
-      path: 'Home >  Produtos >  Instrumentos Musicais > Guitarra Telecaster',
-      name: 'TeleCaster Preta',
+      path: "Home >  Produtos >  Instrumentos Musicais > Guitarra Telecaster",
+      name: "TeleCaster Preta",
       rating: 0,
-      category: 'Instrumento Musical',
+      category: "Instrumento Musical",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
-      price: '$89/hour',
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+      price: "$89/hour",
       advertiser: {
-        name: 'Gabriel Alonso',
-        state: 'São Paulo',
-        city: 'Campinas',
+        name: "Gabriel Alonso",
+        state: "São Paulo",
+        city: "Campinas",
       },
     };
   },

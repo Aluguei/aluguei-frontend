@@ -8,9 +8,10 @@ export default {
   methods: {
     async loginUser(loginInfo) {
       try {
-        await this.$auth.loginWith("local", {
+        const response = await this.$auth.loginWith("local", {
           data: loginInfo,
         });
+        this.$axios.setToken(response.accessToken, "Bearer");
         this.$router.push("/");
       } catch (err) {
         console.error(err);
