@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-center justify-center container-box">
+  <div class="d-flex align-center justify-center">
     <div class="content-box">
       <img src="@/assets/img/logo/logo-aluguei-140x141.png" class="logo" />
       <v-form v-model="valid" @submit.prevent="submitForm(login)">
@@ -16,17 +16,9 @@
           label="Senha"
           required
         ></v-text-field>
-        <NuxtLink to="/esqueci-a-senha">
-          <p class="link cursor-pointer text-decoration-underline float-left">
-            Esqueci a senha
-          </p>
-        </NuxtLink>
-        <NuxtLink to="/cadastrar"
-          ><p class="link cursor-pointer text-decoration-underline float-right">
-            Cadastrar
-          </p>
-        </NuxtLink>
-        <v-btn class="mr-4 btn mt-10 color-white" type="submit" :disabled="!valid">
+        <NuxtLink to="/esqueci-a-senha" class="float-left"> Esqueci a senha </NuxtLink>
+        <NuxtLink to="/cadastrar" class="float-right"> Cadastrar </NuxtLink>
+        <v-btn class="btn mt-10" type="submit" :disabled="!valid">
           {{ buttonText }}
         </v-btn>
       </v-form>
@@ -48,8 +40,8 @@ export default {
   },
   data: () => ({
     login: {
-      email: "tester@tester.com.br",
-      password: "string",
+      email: "",
+      password: "",
     },
     valid: false,
     emailRules: [
