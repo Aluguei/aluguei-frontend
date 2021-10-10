@@ -1,8 +1,12 @@
 <template>
-  <div class="d-flex align-center justify-center container-box">
+  <div class="d-flex align-center justify-center">
     <div class="content-box scroll-loading">
       <div class="d-flex">
-        <img src="@/assets/img/icons/back-arrow.png" class="arrow cursor-pointer float-left" @click="goBack" />
+        <img
+          src="@/assets/img/icons/back-arrow.png"
+          class="arrow cursor-pointer float-left"
+          @click="goBack"
+        />
       </div>
       <h3 class="color-gray mb-4">Cadastrando...</h3>
       <img src="@/assets/img/logo/loading-logo.gif" />
