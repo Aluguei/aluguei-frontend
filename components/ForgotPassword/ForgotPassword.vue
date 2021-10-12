@@ -9,7 +9,7 @@
           />
         </NuxtLink>
       </div>
-      <h3 class="color-gray mb-4">Esqueci a Senha</h3>
+      <h3 class="color-gray mb-4 mt-3">Esqueci a Senha</h3>
       <v-form @submit.prevent="submitForm(cpf)">
         <v-text-field
           v-model="cpf"
@@ -18,7 +18,7 @@
           required
         ></v-text-field>
         <the-mask :mask="['###.###.###-##', '##.###.###/####-##']" />
-        <v-btn class="mr-4 btn mt-10 color-white" type="submit"> Enviar </v-btn>
+        <v-btn class="mr-4 btn mt-4 color-white" type="submit"> Enviar </v-btn>
       </v-form>
     </div>
   </div>
