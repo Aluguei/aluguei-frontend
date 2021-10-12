@@ -10,35 +10,32 @@
       </div>
       <h3 class="color-gray mb-4">Cadastro</h3>
       <p class="text-left">2. Dados pessoais</p>
+      <v-text-field v-model="name" label="Nome" required></v-text-field>
+      <v-text-field v-model="lastName" label="Sobrenome" required></v-text-field>
       <v-text-field
-        v-model="name"
-        :rules="nameRules"
-        label="Nome"
+        v-model="rg"
+        v-mask="'##.###.###-#'"
+        label="RG"
         required
       ></v-text-field>
       <v-text-field
-        v-model="lastName"
-        :rules="lastNameRules"
-        label="Sobrenome"
+        v-model="cpf"
+        v-mask="'###.###.###-##'"
+        label="CPF"
         required
       ></v-text-field>
-      <v-text-field v-model="rg" :rules="rgRules" label="RG" required></v-text-field>
-      <v-text-field v-model="cpf" :rules="cpfRules" label="CPF" required></v-text-field>
       <v-select :items="gender" label="Sexo"></v-select>
 
-      <v-btn
-        class="mr-4 btn mt-10 color-white"
-        type="button"
-        :disabled="invalid"
-        @click="goForward"
-      >
+      <v-btn class="mr-4 btn mt-10 color-white" type="button" @click="goForward">
         Avançar
       </v-btn>
     </div>
   </div>
 </template>
 <script>
+import { mask } from "vue-the-mask";
 export default {
+  directives: { mask },
   data: () => ({
     gender: ["Masculino", "Feminino"],
     name: null,

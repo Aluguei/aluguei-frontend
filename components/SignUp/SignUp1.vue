@@ -11,30 +11,14 @@
       </div>
       <h3 class="color-gray mb-4">Cadastro</h3>
       <p class="text-left">1. Dados para acesso</p>
-      <v-text-field
-        v-model="email"
-        :rules="emailRules"
-        label="E-mail"
-        required
-      ></v-text-field>
+      <v-text-field v-model="email" label="E-mail" required></v-text-field>
       <v-text-field
         v-model="password"
-        :rules="passwordRules"
         label="Senha"
         required
+        type="password"
       ></v-text-field>
-      <v-text-field
-        v-model="emailConfirm"
-        :rules="emailConfirmRules"
-        label="Confirmar Senha"
-        required
-      ></v-text-field>
-      <v-btn
-        class="mr-4 btn mt-10 color-white"
-        type="button"
-        :disabled="invalid"
-        @click="goForward"
-      >
+      <v-btn class="mr-4 btn mt-10 color-white" type="button" @click="goForward">
         Avançar
       </v-btn>
     </div>
@@ -45,7 +29,6 @@ export default {
   data: () => ({
     email: null,
     password: null,
-    emailConfirm: null,
   }),
   methods: {
     goBack() {
