@@ -1,6 +1,6 @@
 <template>
-  <v-sheet class="rounded ma-8 pa-7">
-    <h3 class="mb-6">Lista de Produtos</h3>
+  <v-sheet class="rounded ma-8">
+    <h3 class="mb-6 pa-7">Lista de Produtos</h3>
     <v-slide-group show-arrows>
       <v-slide-item v-for="(item, i) in items" :key="i">
         <v-list>

@@ -15,10 +15,8 @@
       solo
     ></v-autocomplete>
 
-    <v-btn class="color-white bg-blue-medium b-blue-medium px-7 py-1 ma-1 rounded-xl height-auto" type="submit">
-      <v-btn icon>
-        <h6><v-icon class="color-white">mdi-magnify</v-icon></h6>
-      </v-btn>
+    <v-btn class="bg-blue-medium px-7 py-1 ma-1 rounded-xl height-auto" type="submit">
+      <h6><v-icon class="color-white">mdi-magnify</v-icon></h6>
     </v-btn>
   </div>
 </template>
@@ -31,28 +29,28 @@ export default {
       search: null,
       select: null,
       products: [
-        'Moto',
-        'Carro',
-        'Guitarra',
-        'Bateria',
-        'Mesa',
-        'Cadeira',
-        'Ventilador',
-        'Mouse',
-        'Teclado',
-        'Caminhão',
-        'Armário',
-        'Livro',
-        'Tapete',
-        'Cortina',
-        'Lápis',
-        'Caneta',
-        'Régua',
-        'Porta',
-        'Celular',
-        'Notbook',
-        'Ar Condicionado',
-        'Garrafa',
+        "Moto",
+        "Carro",
+        "Guitarra",
+        "Bateria",
+        "Mesa",
+        "Cadeira",
+        "Ventilador",
+        "Mouse",
+        "Teclado",
+        "Caminhão",
+        "Armário",
+        "Livro",
+        "Tapete",
+        "Cortina",
+        "Lápis",
+        "Caneta",
+        "Régua",
+        "Porta",
+        "Celular",
+        "Notbook",
+        "Ar Condicionado",
+        "Garrafa",
       ],
     };
   },
@@ -67,7 +65,7 @@ export default {
       // Simulated ajax query
       setTimeout(() => {
         this.items = this.products.filter((e) => {
-          return (e || '').toLowerCase().includes((v || '').toLowerCase());
+          return (e || "").toLowerCase().includes((v || "").toLowerCase());
         });
         this.loading = false;
       }, 500);
