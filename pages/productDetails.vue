@@ -2,9 +2,6 @@
   <v-app>
     <TopBar />
     <HeaderMain />
-    <ProductDetails />
+    <ProductDetails :id="$route.params.id" />
   </v-app>
 </template>
-<script>
-export default {};
-</script>

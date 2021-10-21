@@ -13,7 +13,9 @@
                 <p class="fs-small mb-2">{{ item.category }}</p>
                 <h4 class="mb-3">{{ item.name }}</h4>
                 <h6 class="color-orange">{{ item.price }}</h6>
-                <v-btn class="mr-4 btn mt-10 color-white" type="button"> Alugar </v-btn>
+                <a :href="`/detalhes-produto/${item.id}`">
+                  <v-btn class="mr-4 btn mt-10 color-white" type="button"> Alugar </v-btn>
+                </a>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -43,10 +45,10 @@ export default {
         const products = await this.$axios.$get("/api/products/available", config);
 
         products.data.map((product) => this.items.push(product));
-        products.meta.map((product) => this.items.push(product));
+        // products.meta.map((product) => this.items.push(product));
 
-        console.log(response);
-        return { response };
+        console.log(products);
+        return { products };
       } catch (error) {
         console.log(error);
       }

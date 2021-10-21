@@ -31,35 +31,7 @@ import { mask } from "vue-the-mask";
 export default {
   directives: { mask },
   data: () => ({
-    state: [
-      "AC",
-      "AL",
-      "AP",
-      "AM",
-      "BA",
-      "CE",
-      "DF",
-      "ES",
-      "GO",
-      "MA",
-      "MS",
-      "MT",
-      "MG",
-      "PA",
-      "PB",
-      "PR",
-      "PE",
-      "PI",
-      "RJ",
-      "RN",
-      "RS",
-      "RO",
-      "RR",
-      "SC",
-      "SP",
-      "SE",
-      "TO",
-    ],
+    state: [],
     city: [],
     valid: null,
     cep: null,
@@ -69,6 +41,33 @@ export default {
     complement: null,
   }),
   methods: {
+    clearFormCEP() {
+      this.state = "";
+      this.city = "";
+      this.street = "";
+      this.neighborhood = "";
+      this.complement = "";
+      this.number = "";
+    },
+    async searchCEP() {
+      const valueCEP = this.cep.replace(/\D/g, "");
+      if (valueCEP !== "") {
+        const validacep = /^[0-9]{8}$/;
+        if (validacep.test(valueCEP)) {
+          try {
+            const response = await this.$axios.$post(
+              "https://viacep.com.br/ws/" + valueCEP + "/json/?callback=meu_callback"
+            );
+            return { response };
+          } catch (error) {
+            console.log(error);
+          }
+        } else {
+          clearFormCEP();
+          alert("Formato de CEP inválido.");
+        }
+      }
+    },
     goBack() {
       this.$store.commit("screen/updateSignup2", true);
       this.$store.commit("screen/updateSignup3", false);

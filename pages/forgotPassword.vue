@@ -28,7 +28,7 @@ export default {
       try {
         const response = await this.$axios
           .$post(
-            "https://aluguei-backend.herokuapp.com/api/auth/request-forgot-password",
+            "https://aluguei-backend.herokuapp.com/api/auth/request-reset-password",
             {
               CPF,
             }

@@ -9,23 +9,31 @@
           <img src="~/assets/img/products/guitar/guitar-01-1.webp" />
         </div>
         <div class="fb-50">
-          <h3 class="font-weight-bold color-black">{{ name }}</h3>
-          <h6 class="color-gray">{{ category }}</h6>
-          <h4 class="color-orange mb-4">{{ price }}</h4>
+          <!-- Produto -->
+          <h3 class="font-weight-bold color-black">{{ product.name }}</h3>
+          <h6 class="color-gray">{{ product.category }}</h6>
+          <h4 class="color-orange mb-4">{{ product.price }}</h4>
           <h4 class="font-weight-bold color-black">Descrição</h4>
-          <p class="mb-5">{{ description }}</p>
-          <h4 class="font-weight-bold color-black">Anunciante</h4>
-          <p class="mb-1">
-            <span class="font-weight-bold color-black">Nome: </span> {{ advertiser.name }}
-          </p>
-          <p class="mb-1">
-            <span class="font-weight-bold color-black">Estado: </span
-            >{{ advertiser.state }}
-          </p>
-          <p class="mb-1">
-            <span class="font-weight-bold color-black">Cidade: </span
-            >{{ advertiser.city }}
-          </p>
+          <p class="mb-5">{{ product.description }}</p>
+          <h4 class="font-weight-bold color-black">Quantidade</h4>
+          <p class="mb-5">{{ product.timeQuantity }}</p>
+
+          <!-- Anunciante -->
+          <div v-if="product.owner">
+            <h4 class="font-weight-bold color-black mb-2">Anunciante</h4>
+            <p>
+              <span class="font-weight-bold color-black mb-1">Nome: </span>
+              {{ product.owner.fullName }}
+            </p>
+            <p>
+              <span class="font-weight-bold color-black mb-1">Estado: </span
+              >{{ product.owner.state }}
+            </p>
+            <p>
+              <span class="font-weight-bold color-black mb-1">Cidade: </span
+              >{{ product.owner.city }}
+            </p>
+          </div>
           <v-btn class="mr-4 btn mt-10 color-white">Alugar</v-btn>
         </div>
       </div>
@@ -34,25 +42,39 @@
 </template>
 <script>
 export default {
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
-      path: "Home >  Produtos >  Instrumentos Musicais > Guitarra Telecaster",
-      name: "TeleCaster Preta",
-      rating: 0,
-      category: "Instrumento Musical",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
-      price: "$89/hour",
-      advertiser: {
-        name: "Gabriel Alonso",
-        state: "São Paulo",
-        city: "Campinas",
-      },
+      path: null,
+      product: [],
+      owner: [],
     };
+  },
+  mounted() {
+    this.listDetailsProduct();
   },
   methods: {
     setRating(rating) {
       this.rating = rating;
+    },
+    async listDetailsProduct() {
+      try {
+        const config = {
+          headers: {
+            device: "mobile",
+          },
+        };
+
+        this.product = await this.$axios.$get(`/api/products/${this.id}`, config);
+        console.log(this.product);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
