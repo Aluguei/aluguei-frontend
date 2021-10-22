@@ -11,33 +11,32 @@ import ProductAdvertise from '~/pages/productAdvertise';
 Vue.use(Router);
 
 export function createRouter() {
-  return new Router({
-    mode: 'history',
-    routes: [
-      {
-        path: '/',
-        component: Main,
-      },
-      {
-        path: '/login',
-        component: Login,
-      },
-      {
-        path: '/esqueci-a-senha',
-        component: ForgotPassword,
-      },
-      {
-        path: '/cadastrar',
-        component: Register,
-      },
-      {
-        path: '/detalhes-produto',
-        component: ProductDetails,
-      },
-      {
-        path: '/anunciar-produto',
-        component: ProductAdvertise,
-      },
-    ],
-  });
+    return new Router({
+        mode: 'history',
+        routes: [{
+                path: '/',
+                component: Main,
+            },
+            {
+                path: '/login',
+                component: Login,
+            },
+            {
+                path: '/esqueci-a-senha',
+                component: ForgotPassword,
+            },
+            {
+                path: '/cadastrar',
+                component: Register,
+            },
+            {
+                path: '/detalhes-produto/:id',
+                component: ProductDetails,
+            },
+            {
+                path: '/anunciar-produto',
+                component: ProductAdvertise,
+            },
+        ],
+    });
 }

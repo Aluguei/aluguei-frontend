@@ -3,8 +3,6 @@
   border-width: 1px;
   border-color: #e4e4e4;
   border-radius: 30px;
-  overflow: hidden;
-  min-height: 44px;
 }
 
 .link {
@@ -12,7 +10,11 @@
 }
 
 .logo {
-  width: 140px;
+  width: 9rem;
+}
+
+.logo-white{
+  width: 7.8rem;
 }
 
 .logo-header {
@@ -41,13 +43,12 @@
 
 .content-box {
   background-color: $white;
-  color: $white;
   text-align: center;
-  width: 375px;
   padding: 40px 50px;
   box-shadow: 1px 4px 9px -4px $black;
   top: 20%;
   position: absolute;
+  width: 24rem;
 }
 
 .col-product:hover {
@@ -72,6 +73,19 @@
   margin: 0.6em 1em;
 }
 
-.description-category {
-  font-size: 0.9rem;
+.circle{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.icon-category{
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
