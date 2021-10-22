@@ -1,5 +1,5 @@
 <template>
-  <v-card flat height="150px" tile class="bg-blue-medium py-4 px-8 d-flex">
+  <v-card flat tile class="bg-blue-medium py-4 px-8 d-flex align-center">
     <div class="fb-15">
       <img src="~assets/svg/logo-white.svg" class="w-65" />
     </div>
@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       valueCart: 'R$ 0,00',
-    };
+    }
   },
-};
+}
 </script>
