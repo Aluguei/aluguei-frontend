@@ -3,8 +3,8 @@
     <v-card class="bs-none py-5 bg-gray mx-10">
       {{ path }}
     </v-card>
-    <div class="product-details mx-10">
-      <div class="d-flex">
+    <div v-if="!loading" class="product-details mx-10">
+      <div v-if="!notFound" class="d-flex">
         <div class="fb-50">
           <img src="~/assets/img/products/guitar/guitar-01-1.webp" />
         </div>
@@ -37,6 +37,15 @@
           <v-btn class="mr-4 btn mt-10 color-white">Alugar</v-btn>
         </div>
       </div>
+      <div v-else>
+        <h3>Produto não encontrado.</h3>
+      </div>
+    </div>
+    <div v-else class="mx-10">
+      <h4 class="text-center">Carregando o produto...</h4>
+      <div class="text-center mt-3">
+        <img src="~/assets/img/logo/loading-logo.gif" />
+      </div>
     </div>
   </v-app>
 </template>
@@ -53,6 +62,8 @@ export default {
       path: null,
       product: [],
       owner: [],
+      loading: true,
+      notFound: false,
     };
   },
   mounted() {
@@ -70,9 +81,14 @@ export default {
           },
         };
 
-        this.product = await this.$axios.$get(`/api/products/${this.id}`, config);
+        this.product = await this.$axios
+          .$get(`/api/products/${this.id}`, config)
+          .finally(() => {
+            this.loading = false;
+          });
         console.log(this.product);
       } catch (error) {
+        this.notFound = true;
         console.log(error);
       }
     },
