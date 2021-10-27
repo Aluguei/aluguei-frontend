@@ -12,7 +12,7 @@
       <p class="text-left">3. Dados de Endereço</p>
       <v-text-field
         v-model="cep"
-        v-mask="'#####.###'"
+        v-mask="'#####-###'"
         label="CEP"
         required
       ></v-text-field>
