@@ -83,9 +83,9 @@ export default {
     modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/proxy', '@nuxt/http'],
 
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-    vuetify: {
-        customVariables: ['~/assets/scss/variables.scss'],
-    },
+    // vuetify: {
+    //     customVariables: ['~/assets/scss/variables.scss'],
+    // },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
