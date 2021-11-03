@@ -14,7 +14,6 @@
       label="Buscar produtos, marcas e muito mais..."
       solo
     ></v-autocomplete>
-
     <v-btn class="bg-blue-medium px-7 py-1 ma-1 rounded-xl height-auto" type="submit">
       <h6><v-icon class="color-white">mdi-magnify</v-icon></h6>
     </v-btn>
@@ -28,7 +27,7 @@ export default {
       items: [],
       search: null,
       select: null,
-      products: ["Veículo", "Tecnologia", "Saúde", "Eletrodoméstico", "Moda"],
+      products: [],
     };
   },
   watch: {
@@ -36,16 +35,34 @@ export default {
       val && val !== this.select && this.querySelections(val);
     },
   },
+  mounted() {
+    this.listProdutcts();
+  },
   methods: {
     querySelections(v) {
       this.loading = true;
-      // Simulated ajax query
       setTimeout(() => {
         this.items = this.products.filter((e) => {
-          return (e || "").toLowerCase().includes((v || "").toLowerCase());
+          return (e || '').toLowerCase().includes((v || '').toLowerCase());
         });
         this.loading = false;
       }, 500);
+    },
+    async listProdutcts() {
+      try {
+        const config = {
+          headers: {
+            device: 'mobile',
+          },
+        };
+        const products = await this.$axios.$get('/api/products/available', config);
+        products.data.map((product) => this.items.push(product.name));
+
+        console.log(products);
+        return { products };
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };

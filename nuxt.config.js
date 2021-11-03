@@ -1,5 +1,5 @@
 export default {
-  // target: 'static',
+    // target: 'static',
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         titleTemplate: '%s ',
@@ -60,6 +60,7 @@ export default {
             '~/components/SignIn',
             '~/components/SignUp',
             '~/components/Banner',
+            '~/components/Search',
         ],
     },
 
