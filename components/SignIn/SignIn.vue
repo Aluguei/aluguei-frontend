@@ -25,7 +25,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   props: {
@@ -40,17 +39,17 @@ export default {
   },
   data: () => ({
     login: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     valid: false,
     emailRules: [
-      (v) => !!v || "E-mail é obrigatório",
-      (v) => /.+@.+/.test(v) || "E-mail deve ser válido",
+      (v) => !!v || 'E-mail é obrigatório',
+      (v) => /.+@.+/.test(v) || 'E-mail deve ser válido',
     ],
     passwordRules: [
-      (v) => !!v || "Senha é obrigatório",
-      (v) => v.length >= 3 || "Senha deve ser maior que 10 caracteres",
+      (v) => !!v || 'Senha é obrigatório',
+      (v) => v.length >= 3 || 'Senha deve ser maior que 10 caracteres',
     ],
   }),
 };

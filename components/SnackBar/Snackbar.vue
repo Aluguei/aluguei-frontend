@@ -8,6 +8,6 @@
 </template>
 <script>
 export default {
-  props: ["snackbar"],
+  props: ['snackbar'],
 };
 </script>
