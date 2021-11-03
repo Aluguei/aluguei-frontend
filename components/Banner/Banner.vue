@@ -15,7 +15,7 @@ export default {
     return {
       items: [
         {
-          src: "banner-1",
+          src: 'banner-1',
         },
       ],
     };

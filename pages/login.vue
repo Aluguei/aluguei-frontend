@@ -27,14 +27,14 @@ export default {
       this.spinner = true;
       try {
         const response = await this.$auth
-          .loginWith("local", {
+          .loginWith('local', {
             data: loginInfo,
           })
           .finally(() => {
             this.spinner = false;
           });
-        this.$axios.setToken(response.accessToken, "Bearer");
-        this.$router.push("/");
+        this.$axios.setToken(response.accessToken, 'Bearer');
+        this.$router.push('/');
       } catch (err) {
         console.error(err);
         this.snackbar = true;

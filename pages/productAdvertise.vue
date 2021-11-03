@@ -1,10 +1,5 @@
 <template>
-  <v-app>
-    <div class="bg-linear-gradient">
-      <ProductAdvertise />
-    </div>
-  </v-app>
+  <div class="bg-linear-gradient">
+    <ProductAdvertise />
+  </div>
 </template>
-<script>
-export default {};
-</script>

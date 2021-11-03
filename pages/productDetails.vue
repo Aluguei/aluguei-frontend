@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <div>
     <TopBar />
     <HeaderMain />
     <ProductDetails :id="$route.params.id" />
-  </v-app>
+  </div>
 </template>

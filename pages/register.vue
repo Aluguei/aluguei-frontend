@@ -1,22 +1,20 @@
 <template>
-  <v-app>
-    <div class="bg-linear-gradient">
-      <v-form @submit.prevent="registerUser(login)">
-        <div v-if="signup1">
-          <SignUp1 />
-        </div>
-        <div v-else-if="signup2">
-          <SignUp2 />
-        </div>
-        <div v-else-if="signup3">
-          <SignUp3 />
-        </div>
-        <div v-else-if="signup4">
-          <SignUp4 />
-        </div>
-      </v-form>
-    </div>
-  </v-app>
+  <div class="bg-linear-gradient">
+    <v-form @submit.prevent="registerUser(login)">
+      <div v-if="signup1">
+        <SignUp1 />
+      </div>
+      <div v-else-if="signup2">
+        <SignUp2 />
+      </div>
+      <div v-else-if="signup3">
+        <SignUp3 />
+      </div>
+      <div v-else-if="signup4">
+        <SignUp4 />
+      </div>
+    </v-form>
+  </div>
 </template>
 <script>
 export default {
@@ -60,10 +58,10 @@ export default {
   methods: {
     async registerUser(user) {
       try {
-        await this.$axios.$post("/api/auth/register", {
+        await this.$axios.$post('/api/auth/register', {
           user,
         });
-        this.$router.push("/");
+        this.$router.push('/');
       } catch (err) {
         console.error(err);
         this.snackbar = true;
