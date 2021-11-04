@@ -22,7 +22,7 @@ export default {
       { text: "Home" },
       { text: "Sobre nós", link: "sobre-nos" },
       { text: "Anunciar produto", link: "/anunciar-produto" },
-      { text: "Contato", link: "/contato" },
+      { text: "Fale Conosco", link: "/fale-conosco" },
     ],
   }),
 };

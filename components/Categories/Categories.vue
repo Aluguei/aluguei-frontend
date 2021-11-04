@@ -1,10 +1,6 @@
 <template>
   <v-list class="d-flex my-5 justify-space-around">
-    <v-list-item
-      v-for="n in 5"
-      :key="n"
-      class="d-flex align-center justify-center"
-    >
+    <v-list-item v-for="n in 5" :key="n" class="d-flex align-center justify-center">
       <div class="ma-3 pa-4 text-center rounded-circle" :style="style[n - 1]">
         <v-icon class="color-white">{{ icon[n - 1] }} </v-icon>
       </div>
@@ -15,7 +11,6 @@
     </v-list-item>
   </v-list>
 </template>
-
 <script>
 export default {
   data() {
@@ -42,7 +37,7 @@ export default {
         'As melhores ofertas ',
         'Produtos de moda',
       ],
-    }
+    };
   },
-}
+};
 </script>

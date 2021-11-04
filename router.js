@@ -7,6 +7,8 @@ import Register from '~/pages/register';
 import Login from '~/pages/login';
 import ProductDetails from '~/pages/productDetails';
 import ProductAdvertise from '~/pages/productAdvertise';
+import ContactUs from '~/pages/contact';
+import AboutUs from '~/pages/about';
 
 Vue.use(Router);
 
@@ -36,6 +38,14 @@ export function createRouter() {
             {
                 path: '/anunciar-produto',
                 component: ProductAdvertise,
+            },
+            {
+                path: '/fale-conosco',
+                component: ContactUs,
+            },
+            {
+                path: '/sobre-nos',
+                component: AboutUs,
             },
         ],
     });
