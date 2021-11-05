@@ -3,26 +3,19 @@
     <div class="content-box">
       <h2>Anunciar Produto</h2>
       <v-form @submit.prevent="submitForm(productInfo)">
-        <v-text-field v-model="productInfo.name" label="Nome"></v-text-field>
-        <v-text-field v-model="productInfo.description" label="Descrição"></v-text-field>
-        <v-text-field v-model="productInfo.category" label="Categoria"></v-text-field>
-        <div class="d-flex">
-          <v-text-field
-            v-model="productInfo.price"
-            v-mask="'R$ ####,##'"
-            label="Valor"
-          ></v-text-field>
-          <p>Por</p>
-          <v-combobox
-            v-model="productInfo.timeUnit"
-            clearable
-            hide-selected
-            persistent-hint
-            :items="items"
-            label="Tempo"
-          ></v-combobox>
-        </div>
-        <v-btn class="mr-4 btn mt-10 color-white" type="submit"> Anunciar </v-btn>
+        <v-text-field v-model="productInfo.name" label="Nome" />
+        <v-text-field v-model="productInfo.description" label="Descrição" />
+        <v-text-field v-model="productInfo.category" label="Categoria" />
+        <v-text-field v-model="productInfo.price" label="Valor" />
+        <v-text-field v-model="productInfo.timeQuantity" label="Tempo" />
+        <v-select
+          v-model="productInfo.timeUnit"
+          item-value="value"
+          item-text="label"
+          :items="items"
+          label="Por"
+        />
+        <v-btn class="mr-4 btn mt-10 color-white" type="submit">Anunciar</v-btn>
       </v-form>
     </div>
   </div>
@@ -40,7 +33,11 @@ export default {
       timeUnit: null,
       timeQuantity: null,
     },
-    items: ["Por Hora", "Por Dia", "Por Semana"],
+    items: [
+      { label: "Hora", value: "hourly" },
+      { label: "Dia", value: "daily" },
+      { label: "Semana", value: "weekly" },
+    ],
   }),
   methods: {
     async submitForm(formInfo) {
@@ -57,9 +54,9 @@ export default {
             name: formInfo.name,
             description: formInfo.description,
             category: formInfo.category,
-            price: formInfo.price,
+            price: parseInt(formInfo.price),
             timeUnit: formInfo.timeUnit,
-            timeQuantity: formInfo.timeQuantity,
+            timeQuantity: parseInt(formInfo.timeQuantity),
           },
           config
         );
