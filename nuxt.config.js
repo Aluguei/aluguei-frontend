@@ -102,17 +102,17 @@ export default {
         // Simple proxy
         '/api': 'https://aluguei-backend.herokuapp.com/',
 
-        // With options
-        '/api2': {
-            target: 'https://aluguei-backend.herokuapp.com/',
-            ws: false
-        },
+        // // With options
+        // '/api2': {
+        //     target: 'https://aluguei-backend.herokuapp.com/',
+        //     ws: false
+        // },
 
-        // Proxy to backend unix socket
-        '/api3': {
-            changeOrigin: false,
-            target: { socketPath: '/var/run/http-sockets/backend.sock' }
-        },
+        // // Proxy to backend unix socket
+        // '/api3': {
+        //     changeOrigin: false,
+        //     target: { socketPath: '/var/run/http-sockets/backend.sock' }
+        // },
     },
 
     svg: {

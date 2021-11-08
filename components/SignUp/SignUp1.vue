@@ -38,9 +38,9 @@ export default {
     ],
   }),
   mounted() {
-    this.email = this.$store.state.signupStore.email || ''
-    this.password = this.$store.state.signupStore.password || ''
-    this.passwordConfirmation = this.$store.state.signupStore.passwordConfirmation || ''
+    this.email = this.$store.state.signupStore.userRegister.email || ''
+    this.password = this.$store.state.signupStore.userRegister.password || ''
+    this.passwordConfirmation = this.$store.state.signupStore.userRegister.passwordConfirmation || ''
   },
   methods: {
     goBack() {
