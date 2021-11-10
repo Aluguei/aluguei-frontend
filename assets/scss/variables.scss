@@ -16,7 +16,7 @@ $black: #000;
 $blue: #1b6dc1;
 $blue-medium: #3385d9;
 $cyan: #1ac1cd;
-$orange: #FE7B37;
+$orange: #fe7b37;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #d63384;
@@ -68,7 +68,7 @@ $colors: (
   'gray-dark': $gray-800,
   'fade': $fade,
   'dark': $dark,
-  'light': $light,
+  'light': $light
 );
 
 // Primary Colors
@@ -136,7 +136,7 @@ $element-sizes: (
   'md': 2rem,
   'lg': 4rem,
   'xl': 7rem,
-  'xxl': 10rem,
+  'xxl': 10rem
 );
 
 $form-body-widths: (
@@ -144,7 +144,7 @@ $form-body-widths: (
   md: 720px,
   lg: 800px,
   xl: 800px,
-  xxl: 1000px,
+  xxl: 1000px
 );
 
 $font-size: (
@@ -161,12 +161,12 @@ $font-size: (
   11: 3rem,
   12: 3.2rem,
   13: 3.5rem,
-  14: 3.8rem,
+  14: 3.8rem
 );
 
 $vertical-align: (
   1: super,
-  2: sub,
+  2: sub
 );
 
 $font-weight: (
@@ -178,7 +178,7 @@ $font-weight: (
   6: 600,
   7: 700,
   8: 800,
-  9: 900,
+  9: 900
 );
 
 $width: (
@@ -191,5 +191,5 @@ $width: (
   7: 70%,
   8: 80%,
   9: 90%,
-  10: 100%,
+  10: 100%
 );

@@ -2,7 +2,7 @@ export const state = () => ({
   signup1: true,
   signup2: false,
   signup3: false,
-  signup4: false,
+  signup4: false
 })
 
 export const mutations = {
@@ -17,5 +17,5 @@ export const mutations = {
   },
   updateSignup4(state, signup4) {
     state.signup4 = signup4
-  },
+  }
 }

@@ -37,14 +37,14 @@
 export default {
   data() {
     return {
-      valueCart: "R$ 0,00",
-    };
+      valueCart: 'R$ 0,00'
+    }
   },
   methods: {
     logoutUser() {
-      this.$auth.logout();
-      this.$router.push("/login");
-    },
-  },
-};
+      this.$auth.logout()
+      this.$router.push('/login')
+    }
+  }
+}
 </script>

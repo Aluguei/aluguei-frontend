@@ -10,7 +10,7 @@
 export default {
   // middleware: "auth",
   data() {
-    return {};
-  },
-};
+    return {}
+  }
+}
 </script>

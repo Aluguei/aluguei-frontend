@@ -14,7 +14,9 @@
                 <h4 class="mb-3">{{ item.name }}</h4>
                 <h6 class="color-orange">{{ item.price }}</h6>
                 <a :href="`/detalhes-produto/${item.id}`">
-                  <v-btn class="mr-4 btn mt-10 color-white" type="button"> Alugar </v-btn>
+                  <v-btn class="mr-4 btn mt-10 color-white" type="button">
+                    Alugar
+                  </v-btn>
                 </a>
               </v-list-item-content>
             </v-list-item>
@@ -29,30 +31,30 @@ export default {
   data: () => ({
     model: null,
     items: [],
-    meta: [],
+    meta: []
   }),
   mounted() {
-    this.listProdutcts();
+    this.listProdutcts()
   },
   methods: {
     async listProdutcts() {
       try {
         const config = {
           headers: {
-            device: "mobile",
-          },
-        };
-        const products = await this.$axios.$get("/api/products/owned", config);
+            device: 'mobile'
+          }
+        }
+        const products = await this.$axios.$get('/api/products/owned', config)
 
-        products.data.map((product) => this.items.push(product));
-        products.meta.map((product) => this.items.push(product));
+        products.data.map((product) => this.items.push(product))
+        products.meta.map((product) => this.items.push(product))
 
-        console.log(response);
-        return { response };
+        console.log(response)
+        return { response }
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>

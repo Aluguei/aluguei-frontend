@@ -24,17 +24,17 @@
   </div>
 </template>
 <script>
-import { mask } from "vue-the-mask";
+import { mask } from 'vue-the-mask'
 export default {
   directives: { mask },
   props: {
     submitForm: {
       type: Function,
-      required: true,
-    },
+      required: true
+    }
   },
   data: () => ({
-    cpf: null,
-  }),
-};
+    cpf: null
+  })
+}
 </script>

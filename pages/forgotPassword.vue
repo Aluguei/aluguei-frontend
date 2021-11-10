@@ -19,30 +19,30 @@ export default {
   data() {
     return {
       snackbar: false,
-      spinner: false,
-    };
+      spinner: false
+    }
   },
   methods: {
     async forgotPassword(CPF) {
-      this.spinner = true;
+      this.spinner = true
       try {
         const response = await this.$axios
           .$post(
-            "https://aluguei-backend.herokuapp.com/api/auth/request-reset-password",
+            'https://aluguei-backend.herokuapp.com/api/auth/request-reset-password',
             {
-              CPF,
+              CPF
             }
           )
           .finally(() => {
-            this.spinner = false;
-          });
-        return { response };
+            this.spinner = false
+          })
+        return { response }
       } catch (error) {
-        console.log(error);
-        this.snackbar = true;
-        this.spinner = false;
+        console.log(error)
+        this.snackbar = true
+        this.spinner = false
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>

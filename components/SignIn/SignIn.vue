@@ -16,7 +16,9 @@
           label="Senha"
           required
         ></v-text-field>
-        <NuxtLink to="/esqueci-a-senha" class="float-left"> Esqueci a senha </NuxtLink>
+        <NuxtLink to="/esqueci-a-senha" class="float-left">
+          Esqueci a senha
+        </NuxtLink>
         <NuxtLink to="/cadastrar" class="float-right"> Cadastrar </NuxtLink>
         <v-btn class="btn mt-10" type="submit" :disabled="!valid">
           {{ buttonText }}
@@ -30,27 +32,27 @@ export default {
   props: {
     submitForm: {
       type: Function,
-      required: true,
+      required: true
     },
     buttonText: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   data: () => ({
     login: {
       email: '',
-      password: '',
+      password: ''
     },
     valid: false,
     emailRules: [
       (v) => !!v || 'E-mail é obrigatório',
-      (v) => /.+@.+/.test(v) || 'E-mail deve ser válido',
+      (v) => /.+@.+/.test(v) || 'E-mail deve ser válido'
     ],
     passwordRules: [
       (v) => !!v || 'Senha é obrigatório',
-      (v) => v.length >= 3 || 'Senha deve ser maior que 10 caracteres',
-    ],
-  }),
-};
+      (v) => v.length >= 3 || 'Senha deve ser maior que 10 caracteres'
+    ]
+  })
+}
 </script>

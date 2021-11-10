@@ -21,7 +21,6 @@ export const state = () => ({
 })
 
 export const mutations = {
-
   signUpOne(state, data) {
     Object.assign(state.userRegister, data)
   }

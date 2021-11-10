@@ -21,7 +21,7 @@
   </div>
 </template>
 <script>
-import { mask } from "vue-the-mask";
+import { mask } from 'vue-the-mask'
 export default {
   directives: { mask },
   data: () => ({
@@ -31,41 +31,41 @@ export default {
       price: null,
       category: null,
       timeUnit: null,
-      timeQuantity: null,
+      timeQuantity: null
     },
     items: [
-      { label: "Hora", value: "hourly" },
-      { label: "Dia", value: "daily" },
-      { label: "Semana", value: "weekly" },
-    ],
+      { label: 'Hora', value: 'hourly' },
+      { label: 'Dia', value: 'daily' },
+      { label: 'Semana', value: 'weekly' }
+    ]
   }),
   methods: {
     async submitForm(formInfo) {
       try {
         const config = {
           headers: {
-            device: "mobile",
-          },
-        };
+            device: 'mobile'
+          }
+        }
 
         const response = await this.$axios.$post(
-          "/api/products",
+          '/api/products',
           {
             name: formInfo.name,
             description: formInfo.description,
             category: formInfo.category,
             price: parseInt(formInfo.price),
             timeUnit: formInfo.timeUnit,
-            timeQuantity: parseInt(formInfo.timeQuantity),
+            timeQuantity: parseInt(formInfo.timeQuantity)
           },
           config
-        );
-        console.log(response);
-        return { response };
+        )
+        console.log(response)
+        return { response }
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>

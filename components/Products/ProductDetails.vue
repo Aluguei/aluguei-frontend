@@ -54,8 +54,8 @@ export default {
   props: {
     id: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
@@ -63,35 +63,35 @@ export default {
       product: [],
       owner: [],
       loading: true,
-      notFound: false,
-    };
+      notFound: false
+    }
   },
   mounted() {
-    this.listDetailsProduct();
+    this.listDetailsProduct()
   },
   methods: {
     setRating(rating) {
-      this.rating = rating;
+      this.rating = rating
     },
     async listDetailsProduct() {
       try {
         const config = {
           headers: {
-            device: "mobile",
-          },
-        };
+            device: 'mobile'
+          }
+        }
 
         this.product = await this.$axios
           .$get(`/api/products/${this.id}`, config)
           .finally(() => {
-            this.loading = false;
-          });
-        console.log(this.product);
+            this.loading = false
+          })
+        console.log(this.product)
       } catch (error) {
-        this.notFound = true;
-        console.log(error);
+        this.notFound = true
+        console.log(error)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>

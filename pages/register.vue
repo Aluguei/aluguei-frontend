@@ -1,17 +1,17 @@
 <template>
-  <div class='bg-linear-gradient'>
-      <div v-if='signup1'>
-        <SignUp1 />
-      </div>
-      <div v-else-if='signup2'>
-        <SignUp2 />
-      </div>
-      <div v-else-if='signup3'>
-        <SignUp3 />
-      </div>
-      <div v-else-if='signup4'>
-        <SignUp4 />
-      </div>
+  <div class="bg-linear-gradient">
+    <div v-if="signup1">
+      <SignUp1 />
+    </div>
+    <div v-else-if="signup2">
+      <SignUp2 />
+    </div>
+    <div v-else-if="signup3">
+      <SignUp3 />
+    </div>
+    <div v-else-if="signup4">
+      <SignUp4 />
+    </div>
   </div>
 </template>
 <script>

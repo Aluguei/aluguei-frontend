@@ -10,7 +10,9 @@
         </v-card-actions>
         <v-card-title class="text-center" style="padding-top: 0">
           <div style="margin-left: auto; margin-right: auto">
-            <v-icon style="color: #f00; font-size: 42px">mdi-close-circle</v-icon>
+            <v-icon style="color: #f00; font-size: 42px"
+              >mdi-close-circle</v-icon
+            >
           </div>
         </v-card-title>
         <v-card-text>
@@ -41,8 +43,8 @@
 export default {
   data() {
     return {
-      dialog: true,
-    };
-  },
-};
+      dialog: true
+    }
+  }
+}
 </script>

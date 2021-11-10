@@ -15,7 +15,10 @@
         label="Buscar produtos, marcas e muito mais..."
         solo
       ></v-autocomplete>
-      <v-btn class="bg-blue-medium px-7 py-1 ma-1 rounded-xl height-auto" type="submit">
+      <v-btn
+        class="bg-blue-medium px-7 py-1 ma-1 rounded-xl height-auto"
+        type="submit"
+      >
         <h6><v-icon class="color-white">mdi-magnify</v-icon></h6>
       </v-btn>
     </v-form>
@@ -30,53 +33,56 @@ export default {
       ids: [],
       search: null,
       select: null,
-      products: [],
-    };
+      products: []
+    }
   },
   watch: {
     search(val) {
-      val && val !== this.select && this.querySelections(val);
-    },
+      val && val !== this.select && this.querySelections(val)
+    }
   },
   mounted() {
-    this.listProdutcts();
+    this.listProdutcts()
   },
   methods: {
     querySelections(v) {
-      this.loading = true;
+      this.loading = true
       setTimeout(() => {
         this.items = this.products.filter((e) => {
-          return (e || "").toLowerCase().includes((v || "").toLowerCase());
-        });
-        this.loading = false;
-      }, 500);
+          return (e || '').toLowerCase().includes((v || '').toLowerCase())
+        })
+        this.loading = false
+      }, 500)
     },
     async listProdutcts() {
       try {
         const config = {
           headers: {
-            device: "mobile",
-          },
-        };
-        const products = await this.$axios.$get("/api/products/available", config);
-        products.data.map((product) => this.items.push(product.name));
-        products.data.map((product) => this.ids.push(product.id));
+            device: 'mobile'
+          }
+        }
+        const products = await this.$axios.$get(
+          '/api/products/available',
+          config
+        )
+        products.data.map((product) => this.items.push(product.name))
+        products.data.map((product) => this.ids.push(product.id))
 
-        console.log(products);
-        return { products };
+        console.log(products)
+        return { products }
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     },
     submitForm(productName) {
-      let productId;
+      let productId
       this.items.forEach((element, index) => {
         if (element === productName) {
-          productId = this.ids[index];
+          productId = this.ids[index]
         }
-      });
-      this.$router.push(`/detalhes-produto/${productId}`);
-    },
-  },
-};
+      })
+      this.$router.push(`/detalhes-produto/${productId}`)
+    }
+  }
+}
 </script>

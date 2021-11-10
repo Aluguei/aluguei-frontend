@@ -14,7 +14,9 @@
                 <h4 class="mb-3">{{ item.name }}</h4>
                 <h6 class="color-orange">{{ item.price }}</h6>
                 <a :href="`/detalhes-produto/${item.id}`">
-                  <v-btn class="mr-4 btn mt-10 color-white" type="button"> Alugar </v-btn>
+                  <v-btn class="mr-4 btn mt-10 color-white" type="button">
+                    Alugar
+                  </v-btn>
                 </a>
               </v-list-item-content>
             </v-list-item>
@@ -32,41 +34,41 @@
 </template>
 <script>
 /* eslint-disable vue/no-unused-components */
-import Loading from "../Loading/Loading.vue";
+import Loading from '../Loading/Loading.vue'
 export default {
   components: { Loading },
   data: () => ({
     model: null,
     items: [],
     meta: [],
-    loading: true,
+    loading: true
   }),
   mounted() {
-    this.listProdutcts();
+    this.listProdutcts()
   },
   methods: {
     async listProdutcts() {
       try {
         const config = {
           headers: {
-            device: "mobile",
-          },
-        };
+            device: 'mobile'
+          }
+        }
         const products = await this.$axios
-          .$get("/api/products/available", config)
+          .$get('/api/products/available', config)
           .finally(() => {
-            this.loading = false;
-          });
+            this.loading = false
+          })
 
-        products.data.map((product) => this.items.push(product));
+        products.data.map((product) => this.items.push(product))
         // products.meta.map((product) => this.items.push(product));
 
         // console.log(products);
-        return { products };
+        return { products }
       } catch (error) {
         // console.log(error);
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
