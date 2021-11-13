@@ -35,7 +35,8 @@ export function createRouter() {
       },
       {
         path: '/produtos',
-        component: ProductsList
+        component: ProductsList,
+        name: 'productsList'
       },
       {
         path: '/detalhes-produto/:id',

@@ -8,16 +8,17 @@ export default class Api {
     }
   })
 
-  static async _call({ path, headers = {} }) {
+  static async _call({ path, method = 'get', headers = {}, query = {} }) {
     const authorization = window.localStorage.getItem('auth._token.local')
 
-    return await this.http.get(path, {
-      headers: { ...headers, authorization }
+    return await this.http[method](path, {
+      headers: { ...headers, authorization },
+      params: query
     })
   }
 
-  static async getAvailableProducts() {
-    const { data } = await this._call({ path: '/products/available' })
+  static async getAvailableProducts(query = {}) {
+    const { data } = await this._call({ path: '/products/available', query })
     return data
   }
 }

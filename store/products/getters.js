@@ -1,6 +1,10 @@
 export default {
-  getProducts({ products = [] }) {
-    return products
+  getAvailableProducts({ availableProducts = [] }) {
+    return availableProducts
+  },
+
+  getProductsSearch({ productsSearch = {} }) {
+    return productsSearch
   },
 
   getIsAvailableProductsLoading({ isAvailableProductsLoading = false }) {

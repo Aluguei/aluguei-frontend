@@ -1,6 +1,10 @@
 export default {
-  setAvailableProducts(state, products = []) {
-    Object.assign(state, { products })
+  setAvailableProducts(state, availableProducts = []) {
+    Object.assign(state, { availableProducts })
+  },
+
+  setProductsSearch(state, productsSearch = {}) {
+    Object.assign(state, { productsSearch })
   },
 
   setIsAvailableProductsLoading(state, isAvailableProductsLoading = false) {

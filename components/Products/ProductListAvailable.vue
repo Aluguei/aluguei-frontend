@@ -1,8 +1,9 @@
 <template>
   <v-sheet class="rounded ma-8">
     <h3 class="pa-7">Lista de Produtos</h3>
+
     <v-slide-group v-if="!isAvailableProductsLoading" show-arrows>
-      <v-slide-item v-for="(item, i) in products" :key="i">
+      <v-slide-item v-for="(item, i) in availableProducts" :key="i">
         <v-list>
           <v-list-item-group>
             <v-list-item>
@@ -29,7 +30,6 @@
       class="d-flex align-center justify-center"
     >
       <div style="text-align: center">
-        <h4 class="color-gray mb-3">Carregando os produtos...</h4>
         <img src="@/assets/img/logo/loading-logo.gif" />
       </div>
     </div>
@@ -39,18 +39,15 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  data: () => ({
-    products: []
-  }),
-
   computed: {
     ...mapGetters({
-      isAvailableProductsLoading: 'products/getIsAvailableProductsLoading'
+      isAvailableProductsLoading: 'products/getIsAvailableProductsLoading',
+      availableProducts: 'products/getAvailableProducts'
     })
   },
 
-  async mounted() {
-    this.products = await this.getAvailableProducts()
+  mounted() {
+    this.getAvailableProducts()
   },
 
   methods: {
