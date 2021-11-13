@@ -38,23 +38,7 @@ export default {
   },
   css: ['~/assets/scss/all.scss'],
   plugins: [],
-  components: {
-    dirs: [
-      '~/components',
-      '~/components/Products',
-      '~/components/404',
-      '~/components/Categories',
-      '~/components/Dialog',
-      '~/components/ForgotPassword',
-      '~/components/Layout',
-      '~/components/Menu',
-      '~/components/Products',
-      '~/components/SignIn',
-      '~/components/SignUp',
-      '~/components/Banner',
-      '~/components/Search'
-    ]
-  },
+  components: true,
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
