@@ -7,7 +7,7 @@
             <v-list-item-title
               class="color-white font-weight-medium fs-small"
               v-text="item.text"
-            ></v-list-item-title>
+            />
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -19,11 +19,11 @@ export default {
   data: () => ({
     // selectedItem: 1,
     items: [
-      { text: 'Home', link: '/' },
-      { text: 'Sobre nós', link: 'sobre-nos' },
-      { text: 'Anunciar produto', link: '/anunciar-produto' },
-      { text: 'Fale Conosco', link: '/fale-conosco' }
-    ]
-  })
-}
+      { text: "Home", link: "/" },
+      { text: "Sobre nós", link: "sobre-nos" },
+      { text: "Anunciar produto", link: "/anunciar-produto" },
+      { text: "Fale Conosco", link: "/fale-conosco" },
+    ],
+  }),
+};
 </script>
