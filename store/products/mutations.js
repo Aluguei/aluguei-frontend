@@ -9,5 +9,9 @@ export default {
 
   setIsAvailableProductsLoading(state, isAvailableProductsLoading = false) {
     Object.assign(state, { isAvailableProductsLoading })
+  },
+
+  setOwnedProducts(state, products = []) {
+    Object.assign(state, { products })
   }
 }

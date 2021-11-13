@@ -9,5 +9,9 @@ export default {
 
   getIsAvailableProductsLoading({ isAvailableProductsLoading = false }) {
     return isAvailableProductsLoading
+  },
+
+  getIsOwnedProductsLoading({ isOwnedProductsLoading = false }) {
+    return isOwnedProductsLoading
   }
 }

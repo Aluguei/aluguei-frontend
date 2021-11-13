@@ -28,4 +28,14 @@ export default class Api {
     const { data } = await this._call({ path: '/products/available', query })
     return data
   }
+
+  static async getOwnedProducts() {
+    const { data } = await this._call({ path: '/products/owned' })
+    return data
+  }
+
+  static async setOwnedProducts() {
+    const { data } = await this._call({ path: '/products/owned' })
+    return data
+  }
 }
