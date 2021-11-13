@@ -34,22 +34,14 @@ export default {
             this.spinner = false
           })
         this.$axios.setToken(response.accessToken, 'Bearer')
-<<<<<<< HEAD
-=======
         this.$axios.setHeader('device', 'mobile')
->>>>>>> redirectUserToLogin
         this.$router.push('/')
       } catch (err) {
         console.error(err)
         this.snackbar = true
         this.spinner = false
       }
-<<<<<<< HEAD
     }
   }
-=======
-    },
-  },
->>>>>>> redirectUserToLogin
 }
 </script>

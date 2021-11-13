@@ -12,7 +12,7 @@
                 </div>
                 <p class="fs-small mb-2">{{ item.category }}</p>
                 <h4 class="mb-3">{{ item.name }}</h4>
-                <h6 class="color-orange">{{ item.price }}</h6>
+                <h6 class="color-orange">R${{ item.price }}</h6>
                 <a :href="`/detalhes-produto/${item.id}`">
                   <v-btn class="mr-4 btn mt-10 color-white" type="button">
                     Alugar

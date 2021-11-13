@@ -19,7 +19,7 @@ export default {
   data: () => ({
     // selectedItem: 1,
     items: [
-      { text: 'Home' },
+      { text: 'Home', link: '/' },
       { text: 'Sobre nós', link: 'sobre-nos' },
       { text: 'Anunciar produto', link: '/anunciar-produto' },
       { text: 'Fale Conosco', link: '/fale-conosco' }
