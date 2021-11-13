@@ -9,7 +9,7 @@ export default class Api {
   })
 
   static removeEmptyValues(q) {
-    return Object.fromEntries(Object.entries(q).filter(([_, v]) => v != null))
+    return Object.fromEntries(Object.entries(q).filter(([_, v]) => !!v))
   }
 
   static async _call({ path, method = 'get', headers = {}, query = {} }) {
