@@ -1,4 +1,5 @@
 export default {
+  loading: false,
   head: {
     titleTemplate: '%s ',
     title: 'Aluguei',
