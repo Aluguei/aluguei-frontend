@@ -49,7 +49,6 @@ export default {
         products.data.map((product) => this.items.push(product))
         products.meta.map((product) => this.items.push(product))
 
-        console.log(response)
         return { response }
       } catch (error) {
         console.log(error)

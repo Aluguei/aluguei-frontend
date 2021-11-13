@@ -68,7 +68,6 @@ export default {
         products.data.map((product) => this.items.push(product.name))
         products.data.map((product) => this.ids.push(product.id))
 
-        console.log(products)
         return { products }
       } catch (error) {
         console.log(error)
