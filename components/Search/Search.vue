@@ -46,8 +46,7 @@ export default {
         this.getAvailableProducts()
       } else {
         this.$router.push({
-          name: 'productsList',
-          query: this.productsSearch
+          name: 'productsList'
         })
       }
     },
