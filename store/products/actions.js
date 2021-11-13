@@ -10,7 +10,7 @@ export default {
     return products.data
   },
 
-  setProductsSearch({ commit }, query = {}) {
-    commit('setProductsSearch', query)
+  setProductsSearch({ commit, state }, query = {}) {
+    commit('setProductsSearch', { ...state.productsSearch, ...query })
   }
 }
