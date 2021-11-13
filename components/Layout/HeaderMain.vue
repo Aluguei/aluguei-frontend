@@ -1,7 +1,9 @@
 <template>
   <v-card flat tile class="bg-blue-medium py-4 px-8 d-flex align-center">
     <div class="fb-15">
-      <img src="~assets/svg/logo-white.svg" class="logo-white" />
+      <a href="/">
+        <img src="~assets/svg/logo-white.svg" class="logo-white" />
+      </a>
     </div>
     <div class="fb-60 mt-4 mr-7">
       <Search />
