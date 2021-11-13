@@ -8,12 +8,19 @@ export default class Api {
     }
   })
 
+  static removeEmptyValues(q) {
+    return Object.fromEntries(Object.entries(q).filter(([_, v]) => v != null))
+  }
+
   static async _call({ path, method = 'get', headers = {}, query = {} }) {
     const authorization = window.localStorage.getItem('auth._token.local')
 
+    const sanatizedHeaders = this.removeEmptyValues(headers)
+    const sanatizedQuery = this.removeEmptyValues(query)
+
     return await this.http[method](path, {
-      headers: { ...headers, authorization },
-      params: query
+      headers: { ...sanatizedHeaders, authorization },
+      params: sanatizedQuery
     })
   }
 
