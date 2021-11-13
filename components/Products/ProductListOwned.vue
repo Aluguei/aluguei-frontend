@@ -1,8 +1,7 @@
 <template>
-  <v-sheet class="rounded ma-8 pa-7">
-    <h3 class="mb-6">Lista de Produtos</h3>
-    <v-slide-group show-arrows>
-      <v-slide-item v-for="(item, i) in items" :key="i">
+  <v-sheet class="rounded ma-8">
+    <v-slide-group v-if="!isOwnedProductsLoading" show-arrows>
+      <v-slide-item v-for="(item, i) in products" :key="i">
         <v-list>
           <v-list-item-group>
             <v-list-item>
@@ -12,11 +11,9 @@
                 </div>
                 <p class="fs-small mb-2">{{ item.category }}</p>
                 <h4 class="mb-3">{{ item.name }}</h4>
-                <h6 class="color-orange">{{ item.price }}</h6>
+                <h6 class="color-orange">R${{ item.price }}</h6>
                 <a :href="`/detalhes-produto/${item.id}`">
-                  <v-btn class="mr-4 btn mt-10 color-white" type="button">
-                    Alugar
-                  </v-btn>
+                  <v-btn class="mr-4 btn mt-10 color-white" type="button"> Alugar </v-btn>
                 </a>
               </v-list-item-content>
             </v-list-item>
@@ -24,36 +21,36 @@
         </v-list>
       </v-slide-item>
     </v-slide-group>
+    <div v-else-if="isOwnedProductsLoading" class="d-flex align-center justify-center">
+      <div style="text-align: center">
+        <h4 class="color-gray mb-3">Carregando os produtos...</h4>
+        <img src="@/assets/img/logo/loading-logo.gif" />
+      </div>
+    </div>
   </v-sheet>
 </template>
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   data: () => ({
-    model: null,
-    items: [],
-    meta: []
+    products: [],
   }),
-  mounted() {
-    this.listProdutcts()
+
+  computed: {
+    ...mapGetters({
+      isOwnedProductsLoading: "products/getIsOwnedProductsLoading",
+    }),
   },
+
+  async mounted() {
+    this.products = await this.getOwnedProducts();
+  },
+
   methods: {
-    async listProdutcts() {
-      try {
-        const config = {
-          headers: {
-            device: 'mobile'
-          }
-        }
-        const products = await this.$axios.$get('/api/products/owned', config)
-
-        products.data.map((product) => this.items.push(product))
-        products.meta.map((product) => this.items.push(product))
-
-        return { response }
-      } catch (error) {
-        console.log(error)
-      }
-    }
-  }
-}
+    ...mapActions({
+      getOwnedProducts: "products/getOwnedProducts",
+    }),
+  },
+};
 </script>
