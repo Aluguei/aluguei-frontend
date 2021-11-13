@@ -20,27 +20,28 @@ export default {
     return {
       snackbar: false,
       spinner: false,
-    };
+    }
   },
   methods: {
     async loginUser(loginInfo) {
-      this.spinner = true;
+      this.spinner = true
       try {
         const response = await this.$auth
           .loginWith('local', {
             data: loginInfo,
           })
           .finally(() => {
-            this.spinner = false;
-          });
-        this.$axios.setToken(response.accessToken, 'Bearer');
-        this.$router.push('/');
+            this.spinner = false
+          })
+        this.$axios.setToken(response.accessToken, 'Bearer')
+        this.$axios.setHeader('device', 'mobile')
+        this.$router.push('/')
       } catch (err) {
-        console.error(err);
-        this.snackbar = true;
-        this.spinner = false;
+        console.error(err)
+        this.snackbar = true
+        this.spinner = false
       }
     },
   },
-};
+}
 </script>
