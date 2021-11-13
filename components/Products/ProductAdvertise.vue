@@ -41,29 +41,25 @@ export default {
   }),
   methods: {
     async submitForm(formInfo) {
-      try {
-        const config = {
-          headers: {
-            device: 'mobile'
-          }
+      const config = {
+        headers: {
+          device: 'mobile'
         }
-
-        const response = await this.$axios.$post(
-          '/api/products',
-          {
-            name: formInfo.name,
-            description: formInfo.description,
-            category: formInfo.category,
-            price: parseInt(formInfo.price),
-            timeUnit: formInfo.timeUnit,
-            timeQuantity: parseInt(formInfo.timeQuantity)
-          },
-          config
-        )
-        return { response }
-      } catch (error) {
-        console.log(error)
       }
+
+      const response = await this.$axios.$post(
+        '/api/products',
+        {
+          name: formInfo.name,
+          description: formInfo.description,
+          category: formInfo.category,
+          price: parseInt(formInfo.price),
+          timeUnit: formInfo.timeUnit,
+          timeQuantity: parseInt(formInfo.timeQuantity)
+        },
+        config
+      )
+      return { response }
     }
   }
 }

@@ -4,7 +4,6 @@
       <TopBar />
       <HeaderMain />
       <Categories />
-      <Banner />
       <Nuxt />
     </v-main>
   </v-app>
