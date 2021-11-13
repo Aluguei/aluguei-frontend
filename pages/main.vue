@@ -1,8 +1,5 @@
 <template>
   <div class="bg-gray">
-    <TopBar />
-    <HeaderMain />
-    <Categories />
     <Banner />
     <ProductListAvailable />
   </div>
@@ -14,6 +11,7 @@ import TopBar from '../components/Layout/TopBar.vue'
 import ProductListAvailable from '~/components/Products/ProductListAvailable.vue'
 
 export default {
+  layout: 'main',
   components: { HeaderMain, TopBar, ProductListAvailable },
   middleware: 'auth'
 }
