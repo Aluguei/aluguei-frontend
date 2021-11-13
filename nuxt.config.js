@@ -1,6 +1,4 @@
 export default {
-  // target: 'static',
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s ',
     title: 'Aluguei',
@@ -37,15 +35,8 @@ export default {
       }
     }
   },
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/scss/all.scss'],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  // components: true,
-
   components: {
     dirs: [
       '~/components',
@@ -63,39 +54,21 @@ export default {
       '~/components/Search'
     ]
   },
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/google-fonts',
     '@nuxtjs/svg',
     '@nuxtjs/router'
   ],
 
-  // router: {
-  //   middleware: ['auth']
-  // },
-
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@nuxtjs/proxy',
     '@nuxt/http'
   ],
-
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-  // vuetify: {
-  //     customVariables: ['~/assets/scss/variables.scss'],
-  // },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
 
   axios: {
     credentials: true,
@@ -104,29 +77,7 @@ export default {
   },
 
   proxy: {
-    // Simple proxy
     '/api': 'https://aluguei-backend.herokuapp.com/'
-
-    // // With options
-    // '/api2': {
-    //     target: 'https://aluguei-backend.herokuapp.com/',
-    //     ws: false
-    // },
-
-    // // Proxy to backend unix socket
-    // '/api3': {
-    //     changeOrigin: false,
-    //     target: { socketPath: '/var/run/http-sockets/backend.sock' }
-    // },
-  },
-
-  svg: {
-    vueSvgLoader: {
-      // vue-svg-loader options
-    },
-    svgSpriteLoader: {
-      // svg-sprite-loader options
-    }
   },
 
   auth: {
