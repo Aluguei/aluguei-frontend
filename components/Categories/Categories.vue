@@ -1,17 +1,20 @@
 <template>
   <v-list class="d-flex my-5 justify-space-around">
     <v-list-item
-      v-for="(item, idx) in items"
+      v-for="(item, idx) in categories"
       :key="idx"
+      :style="item.isActive ? {} : { opacity: 0.6 }"
       class="d-flex align-center justify-center listItem"
     >
-      <div
-        class="ma-3 pa-4 text-center rounded-circle"
-        :style="item.style"
+      <v-btn
+        :color="item.color"
+        class="white--text ma-3 pa-4"
+        fab
         @click="handleCategoryClick(item.category)"
       >
-        <v-icon class="color-white">{{ item.icon }} </v-icon>
-      </div>
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-btn>
+
       <div class="d-flex flex-column justify-space-around">
         <h6>{{ item.name }}</h6>
         <p class="description-category ma-0">{{ item.description }}</p>
@@ -20,59 +23,19 @@
   </v-list>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  data() {
-    return {
-      items: [
-        {
-          style: { backgroundColor: '#41cdcf', cursor: 'pointer' },
-          icon: 'mdi-car-multiple',
-          name: 'Veículo',
-          description: 'Diversos veículos',
-          category: 'vehicle'
-        },
-
-        {
-          style: { backgroundColor: '#f54f9a', cursor: 'pointer' },
-          icon: 'mdi-microsoft-xbox-controller',
-          name: 'Tecnologia',
-          description: 'Produtos de tecnoloia',
-          category: 'technology'
-        },
-
-        {
-          style: { backgroundColor: '#83c847', cursor: 'pointer' },
-          icon: 'mdi-hammer-screwdriver',
-          name: 'Ferramenta',
-          description: 'Ferramentas no geral',
-          category: 'tools'
-        },
-
-        {
-          style: { backgroundColor: '#51acf6', cursor: 'pointer' },
-          icon: 'mdi-basketball',
-          name: 'Esportes',
-          description: 'Artigos esportivos',
-          category: 'sports'
-        },
-
-        {
-          style: { backgroundColor: '#ffb61b', cursor: 'pointer' },
-          icon: 'mdi-shoe-heel',
-          name: 'Moda',
-          description: 'Produtos de moda',
-          category: 'fashion'
-        }
-      ]
-    }
+  computed: {
+    ...mapGetters({
+      categories: 'categories/getCategories'
+    })
   },
 
   methods: {
     ...mapActions({
-      setProductsSearch: 'products/setProductsSearch',
-      getAvailableProducts: 'products/getAvailableProducts'
+      getAvailableProducts: 'products/getAvailableProducts',
+      setProductsSearch: 'products/setProductsSearch'
     }),
 
     handleCategoryClick(category) {
