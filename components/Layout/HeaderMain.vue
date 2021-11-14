@@ -30,8 +30,6 @@
       <v-btn icon class="mb-5">
         <v-icon class="color-white">mdi-heart-outline</v-icon>
       </v-btn>
-
-      <p class="color-white font-weight-bold">{{ valueCart }}</p>
     </div>
   </v-card>
 </template>
