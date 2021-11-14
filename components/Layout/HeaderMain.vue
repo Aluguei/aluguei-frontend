@@ -26,10 +26,6 @@
           ><h6>Cadastrar</h6></nuxt-link
         >
       </div>
-
-      <v-btn icon class="mb-5">
-        <v-icon class="color-white">mdi-heart-outline</v-icon>
-      </v-btn>
     </div>
   </v-card>
 </template>
