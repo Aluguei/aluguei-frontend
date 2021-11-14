@@ -1,21 +1,18 @@
 <template>
-  <ProductAdvertise />
+  <div class="content-layout">
+    <div class="d-flex mb-7 mt-9">
+      <div class="fb-80">
+        <h3>Sua lista de produtos</h3>
+      </div>
+      <div class="fb-20">
+        <AdvertiseProductModal />
+      </div>
+    </div>
+    <ProductListOwned />
+  </div>
 </template>
-
 <script>
-import { mapActions } from 'vuex'
-
 export default {
   layout: 'main',
-
-  mounted() {
-    this.getAvailableProducts()
-  },
-
-  methods: {
-    ...mapActions({
-      getAvailableProducts: 'products/getAvailableProducts'
-    })
-  }
-}
+};
 </script>

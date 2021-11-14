@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="rounded ma-8">
+  <v-sheet class="rounded">
     <v-slide-group v-if="!isOwnedProductsLoading" show-arrows>
       <v-slide-item v-for="(item, i) in products" :key="i">
         <v-list>
@@ -30,7 +30,7 @@
   </v-sheet>
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   data: () => ({
@@ -39,7 +39,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      isOwnedProductsLoading: "products/getIsOwnedProductsLoading",
+      isOwnedProductsLoading: 'products/getIsOwnedProductsLoading',
     }),
   },
 
@@ -49,7 +49,7 @@ export default {
 
   methods: {
     ...mapActions({
-      getOwnedProducts: "products/getOwnedProducts",
+      getOwnedProducts: 'products/getOwnedProducts',
     }),
   },
 };
