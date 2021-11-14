@@ -15,7 +15,7 @@
       <div class="px-14">
         <v-btn
           class="btn-red mr-4 btn color-white mb-8"
-          @click="handleClose(false)"
+          @click="isVisible = false"
         >
           Fechar
         </v-btn>
