@@ -1,44 +1,27 @@
 <template>
   <v-sheet class="rounded ma-8">
     <h3 class="pa-7">Lista de Produtos</h3>
-
-    <v-slide-group v-if="!isAvailableProductsLoading" show-arrows>
-      <v-slide-item v-for="(item, i) in availableProducts" :key="i">
-        <v-list>
-          <v-list-item-group>
-            <v-list-item>
-              <v-list-item-content>
-                <div class="text-center">
-                  <img src="@/assets/img/products/guitar/guitar-01-1.jpg" />
-                </div>
-                <p class="fs-small mb-2">{{ item.category }}</p>
-                <h4 class="mb-3">{{ item.name }}</h4>
-                <h6 class="color-orange">R${{ item.price }}</h6>
-                <a :href="`/detalhes-produto/${item.id}`">
-                  <v-btn class="mr-4 btn mt-10 color-white" type="button">
-                    Alugar
-                  </v-btn>
-                </a>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-slide-item>
-    </v-slide-group>
-    <div
-      v-else-if="isAvailableProductsLoading"
-      class="d-flex align-center justify-center"
-    >
-      <div style="text-align: center">
-        <img src="@/assets/img/logo/loading-logo.gif" />
-      </div>
+    <div v-if="true" class="wrap-products">
+      <ProductCardListItem
+        v-for="(item, i) in availableProducts"
+        :key="i"
+        :product="item"
+      />
+    </div>
+    <div v-else class="d-flex align-center justify-center">
+      <Loading />
     </div>
   </v-sheet>
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import ProductCardListItem from './ProductCardListItem.vue'
+
+import Loading from '~/components/Loading'
 
 export default {
+  components: { Loading, ProductCardListItem },
+
   computed: {
     ...mapGetters({
       isAvailableProductsLoading: 'products/getIsAvailableProductsLoading',
@@ -57,3 +40,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.wrap-products {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-row-gap: 1rem;
+  padding-bottom: 1rem;
+}
+</style>
