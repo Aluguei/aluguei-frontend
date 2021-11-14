@@ -14,7 +14,10 @@ export default {
     return products.data
   },
 
-  setProductsSearch({ commit, state }, query = {}) {
+  setProductsSearch({ commit, state, dispatch }, query = {}) {
+    if ('category' in query)
+      dispatch('categories/setCurrentCategory', query.category, { root: true })
+
     commit('setProductsSearch', { ...state.productsSearch, ...query })
   },
 
