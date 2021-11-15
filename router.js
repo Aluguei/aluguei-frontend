@@ -9,6 +9,7 @@ import ProductDetails from '~/pages/productDetails'
 import ProductAdvertise from '~/pages/productAdvertise'
 import ContactUs from '~/pages/contact'
 import AboutUs from '~/pages/about'
+import ProductsList from '~/pages/productsList'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export function createRouter() {
       {
         path: '/cadastrar',
         component: Register
+      },
+      {
+        path: '/produtos',
+        component: ProductsList,
+        name: 'productsList'
       },
       {
         path: '/detalhes-produto/:id',

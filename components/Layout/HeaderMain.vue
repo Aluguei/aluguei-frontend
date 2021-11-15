@@ -1,7 +1,9 @@
 <template>
   <v-card flat tile class="bg-blue-medium py-4 px-8 d-flex align-center">
     <div class="fb-15">
-      <img src="~assets/svg/logo-white.svg" class="logo-white" />
+      <a href="/">
+        <img src="~assets/svg/logo-white.svg" class="logo-white" />
+      </a>
     </div>
     <div class="fb-60 mt-4 mr-7">
       <Search />
@@ -24,12 +26,6 @@
           ><h6>Cadastrar</h6></nuxt-link
         >
       </div>
-
-      <v-btn icon class="mb-5">
-        <v-icon class="color-white">mdi-heart-outline</v-icon>
-      </v-btn>
-
-      <p class="color-white font-weight-bold">{{ valueCart }}</p>
     </div>
   </v-card>
 </template>

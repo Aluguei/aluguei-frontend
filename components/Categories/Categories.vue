@@ -1,46 +1,51 @@
 <template>
   <v-list class="d-flex my-5 justify-space-around">
     <v-list-item
-      v-for="n in 5"
-      :key="n"
-      class="d-flex align-center justify-center"
+      v-for="(item, idx) in categories"
+      :key="idx"
+      :style="item.isActive ? {} : { opacity: 0.6 }"
+      class="d-flex align-center justify-center listItem"
     >
-      <div class="ma-3 pa-4 text-center rounded-circle" :style="style[n - 1]">
-        <v-icon class="color-white">{{ icon[n - 1] }} </v-icon>
-      </div>
+      <v-btn
+        :color="item.color"
+        class="white--text ma-3 pa-4"
+        fab
+        @click="handleCategoryClick(item.category)"
+      >
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-btn>
+
       <div class="d-flex flex-column justify-space-around">
-        <h6>{{ name[n - 1] }}</h6>
-        <p class="description-category ma-0">{{ description[n - 1] }}</p>
+        <h6>{{ item.name }}</h6>
+        <p class="description-category ma-0">{{ item.description }}</p>
       </div>
     </v-list-item>
   </v-list>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
-  data() {
-    return {
-      style: [
-        { backgroundColor: '#41cdcf' },
-        { backgroundColor: '#f54f9a' },
-        { backgroundColor: '#83c847' },
-        { backgroundColor: '#51acf6' },
-        { backgroundColor: '#ffb61b' }
-      ],
-      icon: [
-        'mdi-car-multiple',
-        'mdi-microsoft-xbox-controller',
-        'mdi-hospital-box',
-        'mdi-fan',
-        'mdi-shoe-heel'
-      ],
-      name: ['Veículo', 'Tecnologia', 'Saude', 'Eletrodoméstico', 'Moda'],
-      description: [
-        'Diversos veículos',
-        'Produtos de tecnoloia',
-        'Produtos de saúde',
-        'As melhores ofertas ',
-        'Produtos de moda'
-      ]
+  computed: {
+    ...mapGetters({
+      categories: 'categories/getCategories'
+    })
+  },
+
+  methods: {
+    ...mapActions({
+      getAvailableProducts: 'products/getAvailableProducts',
+      setProductsSearch: 'products/setProductsSearch'
+    }),
+
+    handleCategoryClick(category) {
+      this.setProductsSearch({ category })
+
+      if (this.$route.path.includes('/produtos')) this.getAvailableProducts()
+      else
+        this.$router.push({
+          name: 'productsList'
+        })
     }
   }
 }

@@ -86,7 +86,6 @@ export default {
           .finally(() => {
             this.loading = false
           })
-        console.log(this.product)
       } catch (error) {
         this.notFound = true
         console.log(error)

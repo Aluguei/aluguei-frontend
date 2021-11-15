@@ -34,6 +34,7 @@ export default {
             this.spinner = false
           })
         this.$axios.setToken(response.accessToken, 'Bearer')
+        this.$axios.setHeader('device', 'mobile')
         this.$router.push('/')
       } catch (err) {
         console.error(err)

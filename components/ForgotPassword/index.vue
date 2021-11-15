@@ -11,12 +11,7 @@
       </div>
       <h3 class="color-gray mb-4 mt-3">Esqueci a Senha</h3>
       <v-form @submit.prevent="submitForm(cpf)">
-        <v-text-field
-          v-model="cpf"
-          v-mask="'###.###.###-##'"
-          label="CPF"
-          required
-        ></v-text-field>
+        <v-text-field v-model="cpf" v-mask="'###.###.###-##'" label="CPF" required />
         <the-mask :mask="['###.###.###-##', '##.###.###/####-##']" />
         <v-btn class="mr-4 btn mt-4 color-white" type="submit"> Enviar </v-btn>
       </v-form>
@@ -24,17 +19,17 @@
   </div>
 </template>
 <script>
-import { mask } from 'vue-the-mask'
+import { mask } from "vue-the-mask";
 export default {
   directives: { mask },
   props: {
     submitForm: {
       type: Function,
-      required: true
-    }
+      required: true,
+    },
   },
   data: () => ({
-    cpf: null
-  })
-}
+    cpf: null,
+  }),
+};
 </script>

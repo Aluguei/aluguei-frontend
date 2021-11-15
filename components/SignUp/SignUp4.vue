@@ -80,8 +80,16 @@ export default {
       this.valid = true
       this.$axios
         .$post('/api/auth/register', this.$store.state.signupStore.userRegister)
-        .then((response) => {
-          console.log(response)
+        .then(async (response) => {
+          await this.$auth.loginWith('local', {
+            data: {
+              email: this.$store.state.signupStore.userRegister.email,
+              password: this.$store.state.signupStore.userRegister.password
+            }
+          })
+
+          this.$axios.setToken(response.accessToken, 'Bearer')
+          this.$axios.setHeader('device', 'mobile')
           this.$router.push('/')
         })
         .catch((error) => {
