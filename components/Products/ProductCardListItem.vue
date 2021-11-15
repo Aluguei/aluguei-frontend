@@ -22,9 +22,9 @@
         </v-expand-transition>
       </v-img>
       <v-card-text class="pt-6" style="position: relative">
-        <v-btn absolute color="blue" class="white--text" fab large right top>
+        <!--<v-btn absolute color="blue" class="white--text" fab large right top>
           <v-icon>mdi-cart</v-icon>
-        </v-btn>
+        </v-btn>-->
         <div class="font-weight-light grey--text text-h6 mb-2">
           {{ product.humanCategory }}
         </div>
@@ -34,6 +34,7 @@
         <div class="font-weight-light text-h6 mb-2">
           {{ product.description }}
         </div>
+        <ProductDetailModal :productId="product.id" />
       </v-card-text>
     </v-card>
   </v-hover>
@@ -80,10 +81,10 @@ export default {
   props: {
     product: {
       type: Object,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
 <style>
