@@ -38,4 +38,14 @@ export default class Api {
     const { data } = await this._call({ path: '/products/owned' });
     return data;
   }
+
+  static async setProduct(form) {
+    const { data } = await this._call({
+      path: '/products',
+      method: 'post',
+      headers,
+      query: form,
+    });
+    return data;
+  }
 }
