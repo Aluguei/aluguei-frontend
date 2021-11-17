@@ -29,7 +29,7 @@
           />
         </v-col>
         <v-col cols="12" sm="6" md="6">
-          <v-text-field v-model="price" v-money="money" label="Valor" />
+          <v-text-field v-model="price" label="Valor" />
         </v-col>
         <v-col cols="12" sm="6" md="6">
           <v-text-field v-model="timeQuantity" label="Tempo" />
@@ -51,11 +51,9 @@
 <script>
 import { mask } from 'vue-the-mask';
 import { mapActions, mapGetters } from 'vuex';
-import { VMoney } from 'v-money';
-// import "./plugins/vuetify-money.js";
 
 export default {
-  directives: { mask, VMoney },
+  directives: { mask },
   computed: {
     ...mapGetters({
       isOwnedProductsLoading: 'products/getIsOwnedProductsLoading',
@@ -139,6 +137,5 @@ export default {
       this.setProduct(form);
     },
   },
-  // eslint-disable-next-line vue/order-in-components
 };
 </script>

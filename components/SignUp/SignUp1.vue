@@ -5,7 +5,7 @@
         <NuxtLink to="/">
           <img
             src="@/assets/img/icons/back-arrow.png"
-            class="arrow cursor-pointer float-left"
+            class="arrow cursor-pointer"
           />
         </NuxtLink>
       </div>
