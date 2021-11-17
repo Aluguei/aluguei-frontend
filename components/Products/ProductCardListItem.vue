@@ -1,6 +1,11 @@
 <template>
   <v-hover v-slot="{ hover }">
-    <v-card class="mx-auto" color="grey lighten-4" max-width="300">
+    <v-card
+      class="mx-auto"
+      color="grey lighten-4"
+      max-width="300"
+      height="500px"
+    >
       <v-img min-width="300" height="250" :src="product.imageUrl" eager>
         <v-expand-transition>
           <div

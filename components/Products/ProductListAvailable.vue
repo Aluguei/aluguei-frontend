@@ -3,13 +3,11 @@
     <ProductDetailModal />
 
     <h3 class="pa-7">Lista de Produtos</h3>
-    <div v-if="true" class="wrap-products">
-      <ProductCardListItem
-        v-for="(item, i) in availableProducts"
-        :key="i"
-        :product="item"
-      />
-    </div>
+    <v-row v-if="true">
+      <v-col v-for="(item, i) in availableProducts" :key="i">
+        <ProductCardListItem :product="item" />
+      </v-col>
+    </v-row>
     <div v-else class="d-flex align-center justify-center">
       <Loading />
     </div>
@@ -46,10 +44,5 @@ export default {
 </script>
 
 <style>
-.wrap-products {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-row-gap: 1rem;
-  padding-bottom: 1rem;
-}
+/** */
 </style>
