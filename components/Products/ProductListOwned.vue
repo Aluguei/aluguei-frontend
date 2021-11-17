@@ -13,7 +13,11 @@
     </div>
     <v-row v-if="true">
       <v-col v-for="(item, i) in ownedProducts" :key="i">
-        <ProductCardListItem :product="item" />
+        <ProductCardListItem
+          :product="item"
+          @click="handleClick"
+          buttonIcon="mdi-pencil"
+        />
       </v-col>
     </v-row>
     <div v-else class="d-flex align-center justify-center">
@@ -48,6 +52,12 @@ export default {
       getOwnedProducts: 'products/getOwnedProducts',
       setFormProductAdvertiseIsVisible: 'formProductAdvertise/setIsVisible'
     }),
+    handleClick(product) {
+      // seta o produto para editar na store
+      // abre o modal
+      alert(product)
+    },
+
     openFormModal() {
       this.setFormProductAdvertiseIsVisible()
     }

@@ -35,9 +35,9 @@
           right
           fab
           top
-          @click="openProductDetailsModal"
+          @click="handleClick"
         >
-          <v-icon>mdi-cart</v-icon>
+          <v-icon>{{ buttonIcon }}</v-icon>
         </v-btn>
         <div class="font-weight-light grey--text text-h6 mb-2">
           {{ product.humanCategory }}
@@ -54,25 +54,21 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 export default {
   props: {
     product: {
       type: Object,
       required: true
+    },
+    buttonIcon: {
+      type: String,
+      required: true
     }
   },
 
   methods: {
-    ...mapActions({
-      setProduct: 'productDetailModal/setProduct',
-      setProductDetailModalIsVisible: 'productDetailModal/setIsVisible'
-    }),
-
-    openProductDetailsModal() {
-      this.setProduct(this.product)
-      this.setProductDetailModalIsVisible()
+    handleClick() {
+      this.$emit('click', this.product)
     }
   }
 }

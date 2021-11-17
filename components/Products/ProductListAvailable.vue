@@ -4,7 +4,11 @@
     <h3 class="pa-7">Lista de Produtos</h3>
     <v-row v-if="!isAvailableProductsLoading">
       <v-col v-for="(item, i) in availableProducts" :key="i">
-        <ProductCardListItem :product="item" />
+        <ProductCardListItem
+          :product="item"
+          buttonIcon="mdi-cart"
+          @click="handleClick"
+        />
       </v-col>
     </v-row>
   </v-sheet>
@@ -31,8 +35,15 @@ export default {
 
   methods: {
     ...mapActions({
-      getAvailableProducts: 'products/getAvailableProducts'
-    })
+      getAvailableProducts: 'products/getAvailableProducts',
+      setProduct: 'productDetailModal/setProduct',
+      setProductDetailModalIsVisible: 'productDetailModal/setIsVisible'
+    }),
+
+    handleClick(product) {
+      this.setProduct(product)
+      this.setProductDetailModalIsVisible()
+    }
   }
 }
 </script>

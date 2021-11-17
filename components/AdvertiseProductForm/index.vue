@@ -45,7 +45,7 @@
           />
         </v-col>
       </v-row>
-      <v-btn class="btn mt-7 mb-4" type="submit">Anunciar</v-btn>
+      <v-btn class="btn mt-7 mb-7" type="submit">Anunciar</v-btn>
     </v-form>
   </div>
 </template>
