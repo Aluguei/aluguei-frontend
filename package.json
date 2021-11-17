@@ -32,7 +32,8 @@
         "v-money": "^0.8.1",
         "vue-star-rating": "^1.7.0",
         "vue-the-mask": "^0.11.1",
-        "vuetify": "^2.5.5"
+        "vuetify": "^2.5.5",
+        "vuetify-money": "^1.2.0"
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.14.7",
