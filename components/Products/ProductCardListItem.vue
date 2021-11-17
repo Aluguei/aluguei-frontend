@@ -22,9 +22,18 @@
         </v-expand-transition>
       </v-img>
       <v-card-text class="pt-6" style="position: relative">
-        <!--<v-btn absolute color="blue" class="white--text" fab large right top>
+        <v-btn
+          class="white--text"
+          color="blue"
+          absolute
+          large
+          right
+          fab
+          top
+          @click="openProductDetailsModal"
+        >
           <v-icon>mdi-cart</v-icon>
-        </v-btn>-->
+        </v-btn>
         <div class="font-weight-light grey--text text-h6 mb-2">
           {{ product.humanCategory }}
         </div>
@@ -34,57 +43,34 @@
         <div class="font-weight-light text-h6 mb-2">
           {{ product.description }}
         </div>
-        <ProductDetailModal :productId="product.id" />
       </v-card-text>
     </v-card>
   </v-hover>
-
-  <!-- <v-hover>
-    <v-card elevation="10" class="mx-auto card" max-width="300">
-      <v-img
-        class="noImage"
-
-        
-      ></v-img>
-
-      <v-card-title class="text-center">{{ product.name }}</v-card-title>
-
-      <v-card-text>
-        <v-row align="center" justify="center">
-          <v-rating
-            :value="4.5"
-            color="amber"
-            dense
-            half-increments
-            readonly
-          ></v-rating>
-        </v-row>
-        <div class="mt-4 text-subtitle-1 text-center">
-          R$ {{ product.price }}
-        </div>
-        <div class="mb-2 text-subtitle-1 text-center">{{ product.price }}</div>
-
-        <v-row>
-          <v-col>
-            <div>
-              {{ product.description }}
-            </div>
-          </v-col>
-        </v-row>
-      </v-card-text>
-    </v-card>
-  </v-hover> -->
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: {
     product: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
-};
+
+  methods: {
+    ...mapActions({
+      setProduct: 'productDetailModal/setProduct',
+      setProductDetailModalIsVisible: 'productDetailModal/setIsVisible'
+    }),
+
+    openProductDetailsModal() {
+      this.setProduct(this.product)
+      this.setProductDetailModalIsVisible(true)
+    }
+  }
+}
 </script>
 
 <style>

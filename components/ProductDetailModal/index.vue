@@ -1,29 +1,40 @@
 <template>
-  <Modal :isVisible="isVisible" title="Detalhes do produto" nameButton="Ver">
-    <ProductDetailCard :productId="productId" />
+  <Modal
+    :isPersistent="true"
+    :isVisible="isVisible"
+    :title="product.name"
+    @closeDialog="closeModal"
+  >
+    <ProductDetailCard :product="product" />
   </Modal>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import Modal from '~/components/Modal';
-import ProductDetailCard from '~/components/ProductDetailCard';
+import { mapGetters, mapActions } from 'vuex'
+import Modal from '~/components/Modal'
+import ProductDetailCard from '~/components/ProductDetailCard'
 
 export default {
   components: {
     ProductDetailCard,
-    Modal,
+    Modal
   },
-  props: {
-    productId: {
-      type: String,
-      required: true,
-    },
-  },
+
   computed: {
     ...mapGetters({
-      isVisible: 'dialog/getIsVisible',
-    }),
+      isVisible: 'productDetailModal/getIsVisible',
+      product: 'productDetailModal/getProduct'
+    })
   },
-};
+
+  methods: {
+    ...mapActions({
+      setIsVisible: 'productDetailModal/setIsVisible'
+    }),
+
+    closeModal() {
+      this.setIsVisible()
+    }
+  }
+}
 </script>

@@ -1,5 +1,7 @@
 <template>
   <v-sheet class="rounded ma-8">
+    <ProductDetailModal />
+
     <h3 class="pa-7">Lista de Produtos</h3>
     <div v-if="true" class="wrap-products">
       <ProductCardListItem
@@ -17,10 +19,12 @@
 import { mapActions, mapGetters } from 'vuex'
 import ProductCardListItem from './ProductCardListItem.vue'
 
+import ProductDetailModal from '~/components/ProductDetailModal'
+
 import Loading from '~/components/Loading'
 
 export default {
-  components: { Loading, ProductCardListItem },
+  components: { Loading, ProductCardListItem, ProductDetailModal },
 
   computed: {
     ...mapGetters({
