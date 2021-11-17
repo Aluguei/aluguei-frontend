@@ -2,7 +2,7 @@
   <Modal
     :isPersistent="true"
     :isVisible="isVisible"
-    :title="product.name"
+    :title="product.name || ''"
     @closeDialog="closeModal"
   >
     <ProductDetailCard :product="product" />

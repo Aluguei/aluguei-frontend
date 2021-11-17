@@ -3,14 +3,11 @@
     <ProductDetailModal />
 
     <h3 class="pa-7">Lista de Produtos</h3>
-    <v-row v-if="true">
+    <v-row v-if="!isAvailableProductsLoading">
       <v-col v-for="(item, i) in availableProducts" :key="i">
         <ProductCardListItem :product="item" />
       </v-col>
     </v-row>
-    <div v-else class="d-flex align-center justify-center">
-      <Loading />
-    </div>
   </v-sheet>
 </template>
 <script>
@@ -19,10 +16,8 @@ import ProductCardListItem from './ProductCardListItem.vue'
 
 import ProductDetailModal from '~/components/ProductDetailModal'
 
-import Loading from '~/components/Loading'
-
 export default {
-  components: { Loading, ProductCardListItem, ProductDetailModal },
+  components: { ProductCardListItem, ProductDetailModal },
 
   computed: {
     ...mapGetters({
