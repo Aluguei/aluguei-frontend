@@ -8,14 +8,14 @@
           :rules="emailRules"
           label="E-mail"
           required
-        ></v-text-field>
+        />
         <v-text-field
           v-model="login.password"
           :rules="passwordRules"
           type="password"
           label="Senha"
           required
-        ></v-text-field>
+        />
         <NuxtLink to="/esqueci-a-senha" class="float-left">
           Esqueci a senha
         </NuxtLink>
