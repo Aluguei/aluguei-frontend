@@ -1,6 +1,16 @@
 <template>
   <v-sheet class="rounded ma-8">
-    <ProductDetailModal />
+    <AdvertiseProductModal />
+    <div class="d-flex">
+      <div class="fb-80">
+        <h3 class="pa-7">Sua Lista de Produtos</h3>
+      </div>
+      <div class="fb-20 mr-4">
+        <v-btn class="btn mt-7 mb-7" type="button" @click="openFormModal"
+          >Anunciar Produto</v-btn
+        >
+      </div>
+    </div>
     <v-row v-if="true">
       <v-col v-for="(item, i) in ownedProducts" :key="i">
         <ProductCardListItem :product="item" />
@@ -15,12 +25,12 @@
 import { mapActions, mapGetters } from 'vuex'
 import ProductCardListItem from './ProductCardListItem.vue'
 
-import ProductDetailModal from '~/components/ProductDetailModal'
+import AdvertiseProductModal from '~/components/AdvertiseProductModal'
 
 import Loading from '~/components/Loading'
 
 export default {
-  components: { Loading, ProductCardListItem, ProductDetailModal },
+  components: { Loading, ProductCardListItem, AdvertiseProductModal },
 
   computed: {
     ...mapGetters({
@@ -35,8 +45,12 @@ export default {
 
   methods: {
     ...mapActions({
-      getOwnedProducts: 'products/getOwnedProducts'
-    })
+      getOwnedProducts: 'products/getOwnedProducts',
+      setFormProductAdvertiseIsVisible: 'formProductAdvertise/setIsVisible'
+    }),
+    openFormModal() {
+      this.setFormProductAdvertiseIsVisible()
+    }
   }
 }
 </script>

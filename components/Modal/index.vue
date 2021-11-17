@@ -20,7 +20,7 @@
       </div>
 
       <v-card-title class="pa-0 ma-0">
-        <h2 class="mx-auto color-black">
+        <h2 class="mx-auto color-black" v-if="title">
           {{ title }}
         </h2>
       </v-card-title>

@@ -1,7 +1,6 @@
 <template>
   <v-sheet class="rounded ma-8">
     <ProductDetailModal />
-
     <h3 class="pa-7">Lista de Produtos</h3>
     <v-row v-if="true">
       <v-col v-for="(item, i) in availableProducts" :key="i">
