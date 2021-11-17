@@ -11,8 +11,6 @@ export default {
       return e
     })
 
-    console.log(filteredCategories)
-
     Object.assign(state, { categories: filteredCategories })
   }
 }
