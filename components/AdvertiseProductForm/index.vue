@@ -1,5 +1,5 @@
 <template>
-  <div class="px-14 align-center justify-center">
+  <div class="px-14">
     <v-form
       @submit.prevent="
         submitForm({
@@ -29,7 +29,7 @@
           />
         </v-col>
         <v-col cols="12" sm="6" md="6">
-          <v-text-field v-model="price" label="Valor" v-money="money" />
+          <v-text-field v-model="price" v-money="money" label="Valor" />
         </v-col>
         <v-col cols="12" sm="6" md="6">
           <v-text-field v-model="timeQuantity" label="Tempo" />
@@ -51,10 +51,11 @@
 <script>
 import { mask } from 'vue-the-mask';
 import { mapActions, mapGetters } from 'vuex';
-import { Money } from 'v-money';
+import { VMoney } from 'v-money';
+// import "./plugins/vuetify-money.js";
 
 export default {
-  directives: { mask, Money },
+  directives: { mask, VMoney },
   computed: {
     ...mapGetters({
       isOwnedProductsLoading: 'products/getIsOwnedProductsLoading',
@@ -133,9 +134,11 @@ export default {
       getOwnedProducts: 'products/getOwnedProducts',
       setProduct: 'formProductAdvertise/setProduct',
     }),
+
     submitForm(form) {
       this.setProduct(form);
     },
   },
+  // eslint-disable-next-line vue/order-in-components
 };
 </script>

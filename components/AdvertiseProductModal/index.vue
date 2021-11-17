@@ -5,9 +5,9 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Modal from "~/components/Modal";
 import AdvertiseProductForm from "~/components/AdvertiseProductForm";
-import { mapGetters } from "vuex";
 
 export default {
   components: {
