@@ -22,7 +22,7 @@
             style="height: 100%; justify-content: center; align-items: center"
           >
             R${{ product.price }} <br />
-            {{ product.humanTimeUnit }}
+            / {{ product.humanTimeUnit }}
           </div>
         </v-expand-transition>
       </v-img>
@@ -72,7 +72,7 @@ export default {
 
     openProductDetailsModal() {
       this.setProduct(this.product)
-      this.setProductDetailModalIsVisible(true)
+      this.setProductDetailModalIsVisible()
     }
   }
 }
