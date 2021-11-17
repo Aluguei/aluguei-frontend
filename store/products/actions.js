@@ -21,12 +21,12 @@ export default {
     commit('setProductsSearch', { ...state.productsSearch, ...query });
   },
 
-  async getOwnedProducts({ commit, state, dispatch }) {
+  async getOwnedProducts({ commit, dispatch }) {
     commit('setIsOwnedProductsLoading', true);
 
     dispatch('loading/setIsVisible', true, { root: true });
 
-    const products = await api.getOwnedProducts(state.productsSearch);
+    const products = await api.getOwnedProducts();
     commit('setOwnedProducts', products.data);
     commit('setIsOwnedProductsLoading', false);
     dispatch('loading/setIsVisible', false, { root: true });

@@ -3,8 +3,8 @@ export default {
       Object.assign(state, { availableProducts });
     },
   
-    setOwnedProducts(state, products = []) {
-      Object.assign(state, { products });
+    setOwnedProducts(state, ownedProducts = []) {
+      Object.assign(state, { ownedProducts });
     },
   
     setProductsSearch(state, productsSearch = {}) {
