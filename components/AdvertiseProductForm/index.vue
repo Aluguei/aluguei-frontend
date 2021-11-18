@@ -1,5 +1,6 @@
 <template>
   <div class="px-14">
+    <h2 class="text-center">Anunciar Produto</h2>
     <v-form
       @submit.prevent="
         submitForm({
@@ -8,7 +9,7 @@
           price,
           category,
           timeUnit,
-          timeQuantity,
+          timeQuantity
         })
       "
     >
@@ -44,98 +45,114 @@
           />
         </v-col>
       </v-row>
-      <v-btn class="btn mt-7 mb-4" type="submit">Anunciar</v-btn>
+      <v-btn class="btn mt-7 mb-7" type="submit">Anunciar</v-btn>
     </v-form>
   </div>
 </template>
 <script>
-import { mask } from 'vue-the-mask';
-import { mapActions, mapGetters } from 'vuex';
+import { mask } from 'vue-the-mask'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   directives: { mask },
   computed: {
     ...mapGetters({
-      isOwnedProductsLoading: 'products/getIsOwnedProductsLoading',
+      isOwnedProductsLoading: 'products/getIsOwnedProductsLoading'
     }),
     name: {
       get() {
-        return this.$store.state.formProductAdvertise.name;
+        return this.$store.state.formProductAdvertise.name
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateName', value);
-      },
+        this.$store.commit('formProductAdvertise/updateName', value)
+      }
     },
     description: {
       get() {
-        return this.$store.state.formProductAdvertise.description;
+        return this.$store.state.formProductAdvertise.description
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateDescription', value);
-      },
+        this.$store.commit('formProductAdvertise/updateDescription', value)
+      }
     },
     price: {
       get() {
-        return this.$store.state.formProductAdvertise.price;
+        return this.$store.state.formProductAdvertise.price
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updatePrice', value);
-      },
+        this.$store.commit('formProductAdvertise/updatePrice', value)
+      }
     },
     category: {
       get() {
-        return this.$store.state.formProductAdvertise.category;
+        return this.$store.state.formProductAdvertise.category
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateCategory', value);
-      },
+        this.$store.commit('formProductAdvertise/updateCategory', value)
+      }
     },
     timeUnit: {
       get() {
-        return this.$store.state.formProductAdvertise.timeUnit;
+        return this.$store.state.formProductAdvertise.timeUnit
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateTimeUnit', value);
-      },
+        this.$store.commit('formProductAdvertise/updateTimeUnit', value)
+      }
     },
     timeQuantity: {
       get() {
-        return this.$store.state.formProductAdvertise.timeQuantity;
+        return this.$store.state.formProductAdvertise.timeQuantity
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateTimeQuantity', value);
-      },
+        this.$store.commit('formProductAdvertise/updateTimeQuantity', value)
+      }
     },
     itemsTimeUnit: {
       get() {
-        return this.$store.state.formProductAdvertise.itemsTimeUnit;
-      },
+        return this.$store.state.formProductAdvertise.itemsTimeUnit
+      }
     },
     itemsCategory: {
       get() {
-        return this.$store.state.formProductAdvertise.itemsCategory;
-      },
+        return this.$store.state.formProductAdvertise.itemsCategory
+      }
     },
     money: {
       get() {
-        return this.$store.state.formProductAdvertise.money;
-      },
-    },
+        return this.$store.state.formProductAdvertise.money
+      }
+    }
   },
 
   async mounted() {
-    this.products = await this.getOwnedProducts();
+    this.products = await this.getOwnedProducts()
   },
 
   methods: {
     ...mapActions({
       getOwnedProducts: 'products/getOwnedProducts',
-      setProduct: 'formProductAdvertise/setProduct',
+      setProduct: 'formProductAdvertise/setProduct'
     }),
 
-    submitForm(form) {
-      this.setProduct(form);
-    },
-  },
-};
+    async submitForm(form) {
+      const body = {
+        name: form.name,
+        price: parseInt(form.price),
+        category: form.category,
+        description: form.description,
+        timeQuantity: parseInt(form.timeQuantity),
+        timeUnit: form.timeUnit
+      }
+      try {
+        await this.$axios.post(
+          'https://aluguei-backend.herokuapp.com/api/products',
+          body
+        )
+        // location.reload()
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+}
 </script>
