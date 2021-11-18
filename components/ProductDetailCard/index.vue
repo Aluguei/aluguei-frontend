@@ -54,12 +54,16 @@
 
     <v-row>
       <v-col cols="4" offset="4">
-        <v-btn class="mt-3 btn color-white">Alugar</v-btn>
+        <v-btn class="mt-3 btn color-white" @click="handleRentProduct"
+          >Alugar</v-btn
+        >
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: {
     product: {
@@ -77,8 +81,22 @@ export default {
   },
 
   methods: {
+    ...mapActions({
+      getOwnedProducts: 'products/getOwnedProducts',
+      setSnackbar: 'snackbars/setSnackbar'
+    }),
+
     setRating(rating) {
       this.rating = rating
+    },
+    handleRentProduct() {
+      const snackbar = {
+        timeout: 3000,
+        color: 'green',
+        text: 'Produto alugado com sucesso!'
+      }
+
+      this.setSnackbar(snackbar)
     }
   }
 }
