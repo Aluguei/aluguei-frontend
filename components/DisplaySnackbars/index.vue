@@ -7,10 +7,10 @@
       :timeout="snackbar.timeout"
       :color="snackbar.color"
       :style="`bottom: ${index * 80 + 15}px`"
-      @input="handleInput(index)"
       right
+      @input="handleInput(index)"
     >
-      <span> {{ snackbar.text }} {{ index }} </span>
+      <span> {{ snackbar.text }} </span>
 
       <template v-slot:action="{ attrs }">
         <v-btn v-bind="attrs" text @click="handleInput(index)"> Fechar </v-btn>

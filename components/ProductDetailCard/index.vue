@@ -1,8 +1,16 @@
 <template>
   <v-container>
     <v-row>
+      <v-col class="text-center">
+        <h2 style="color: black">{{ product.name }}</h2>
+        <h5 style="font-weight: bold">{{ product.humanCategory }}</h5>
+      </v-col>
+    </v-row>
+    <v-row>
       <v-col align-self="center" class="pa-5" cols="6">
-        <v-row> <v-img :src="product.imageUrl" /> </v-row>
+        <v-row>
+          <v-img :src="product.imageUrl" />
+        </v-row>
       </v-col>
       <v-col
         class="pa-5"
@@ -41,28 +49,31 @@
         </div>
       </v-col>
     </v-row>
-    <v-row class="mt-5" align-content="center">
+    <v-row class="mt-7">
       <v-col class="text-center">
         <h1 style="color: #fe7b37; margin-right: 10px">
-          R$ {{ product.price }}
+          R$ {{ product.price }} / {{ product.humanTimeUnit }}
         </h1>
-        <h3 style="color: #fe7b37; margin-top: 5px">
-          / {{ product.humanTimeUnit }}
-        </h3>
       </v-col>
     </v-row>
-
-    <v-row>
-      <v-col cols="4" offset="4">
-        <v-btn class="mt-3 btn color-white" @click="handleRentProduct"
-          >Alugar</v-btn
+    <v-row align-content="center">
+      <v-col cols="4" offset-lg="4">
+        <v-btn
+          :loading="loading"
+          :disabled="loading"
+          class="btn color-white"
+          @click="handleRentProduct"
         >
+          Alugar
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
 import { mapActions } from 'vuex'
+
+import api from '~/plugins/api'
 
 export default {
   props: {
@@ -73,30 +84,31 @@ export default {
   },
   data() {
     return {
-      path: null,
-      owner: [],
-      loading: true,
-      notFound: false
+      loading: false
     }
   },
 
   methods: {
     ...mapActions({
       getOwnedProducts: 'products/getOwnedProducts',
-      setSnackbar: 'snackbars/setSnackbar'
+      setSnackbar: 'snackbars/setSnackbar',
+      rentProduct: 'products/rentProduct'
     }),
 
     setRating(rating) {
       this.rating = rating
     },
-    handleRentProduct() {
-      const snackbar = {
-        timeout: 3000,
-        color: 'green',
-        text: 'Produto alugado com sucesso!'
-      }
 
-      this.setSnackbar(snackbar)
+    handleRentProduct() {
+      Object.assign(this, { loading: true })
+
+      this.rentProduct(this.product.id)
+        .catch((err) => {
+          console.error(err)
+        })
+        .finally(() => {
+          Object.assign(this, { loading: false })
+        })
     }
   }
 }

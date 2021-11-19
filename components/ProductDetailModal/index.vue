@@ -1,10 +1,5 @@
 <template>
-  <Modal
-    :isPersistent="true"
-    :isVisible="isVisible"
-    :title="product.name || ''"
-    @closeDialog="closeModal"
-  >
+  <Modal :isPersistent="true" :isVisible="isVisible" @closeDialog="closeModal">
     <ProductDetailCard :product="product" />
   </Modal>
 </template>
