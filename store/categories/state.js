@@ -45,6 +45,6 @@ const INIT_CATEGORIES = [
   }
 ]
 
-export default {
+export default () => ({
   categories: INIT_CATEGORIES
-}
+})
