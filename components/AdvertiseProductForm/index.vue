@@ -1,31 +1,43 @@
 <template>
-  <div class="px-14 align-center justify-center">
-    <v-form @submit.prevent="submitForm(productInfo)">
+  <div class="px-14">
+    <h2 class="text-center">Anunciar Produto</h2>
+    <v-form
+      @submit.prevent="
+        submitForm({
+          name,
+          description,
+          price,
+          category,
+          timeUnit,
+          timeQuantity
+        })
+      "
+    >
       <v-row>
         <v-col cols="12" sm="6" md="6">
-          <v-text-field v-model="productInfo.name" label="Nome" />
+          <v-text-field v-model="name" label="Nome" />
         </v-col>
         <v-col cols="12" sm="6" md="6">
-          <v-text-field v-model="productInfo.description" label="Descrição" />
+          <v-text-field v-model="description" label="Descrição" />
         </v-col>
         <v-col cols="12" sm="6" md="6">
           <v-select
-            v-model="productInfo.category"
+            v-model="category"
             item-value="value"
             item-text="label"
-            :items="itemsCetegory"
+            :items="itemsCategory"
             label="Categoria"
           />
         </v-col>
         <v-col cols="12" sm="6" md="6">
-          <v-text-field v-model="productInfo.price" label="Valor" v-money="money" />
+          <v-text-field v-model="price" label="Valor" />
         </v-col>
         <v-col cols="12" sm="6" md="6">
-          <v-text-field v-model="productInfo.timeQuantity" label="Tempo" />
+          <v-text-field v-model="timeQuantity" label="Tempo" />
         </v-col>
         <v-col cols="12" sm="6" md="6">
           <v-select
-            v-model="productInfo.timeUnit"
+            v-model="timeUnit"
             item-value="value"
             item-text="label"
             :items="itemsTimeUnit"
@@ -33,62 +45,114 @@
           />
         </v-col>
       </v-row>
-      <v-btn class="mr-4 btn mt-10 color-white mb-4" type="submit">Anunciar</v-btn>
+      <v-btn class="btn mt-7 mb-7" type="submit">Anunciar</v-btn>
     </v-form>
   </div>
 </template>
 <script>
-import { mask } from 'vue-the-mask';
-import { mapActions, mapGetters } from 'vuex';
-import { Money } from 'v-money';
+import { mask } from 'vue-the-mask'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  directives: { mask, Money },
-  data: () => ({
-    productInfo: {
-      name: null,
-      description: null,
-      price: null,
-      category: null,
-      timeUnit: null,
-      timeQuantity: null,
-    },
-    itemsTimeUnit: [
-      { label: 'Hora', value: 'hourly' },
-      { label: 'Dia', value: 'daily' },
-      { label: 'Semana', value: 'weekly' },
-    ],
-    itemsCetegory: [
-      { label: 'Veiculos', value: 'vehicle' },
-      { label: 'Tecnologia', value: 'technology' },
-      { label: 'Ferramenta', value: 'tools' },
-      { label: 'Esportes', value: 'sports' },
-      { label: 'Moda', value: 'fashion' },
-    ],
-    money: {
-      decimal: ',',
-      thousands: '.',
-      prefix: 'R$ ',
-      suffix: ' #',
-      precision: 2,
-      masked: false,
-    },
-  }),
-
+  directives: { mask },
   computed: {
     ...mapGetters({
-      isOwnedProductsLoading: 'products/getIsOwnedProductsLoading',
+      isOwnedProductsLoading: 'products/getIsOwnedProductsLoading'
     }),
+    name: {
+      get() {
+        return this.$store.state.formProductAdvertise.name
+      },
+      set(value) {
+        this.$store.commit('formProductAdvertise/updateName', value)
+      }
+    },
+    description: {
+      get() {
+        return this.$store.state.formProductAdvertise.description
+      },
+      set(value) {
+        this.$store.commit('formProductAdvertise/updateDescription', value)
+      }
+    },
+    price: {
+      get() {
+        return this.$store.state.formProductAdvertise.price
+      },
+      set(value) {
+        this.$store.commit('formProductAdvertise/updatePrice', value)
+      }
+    },
+    category: {
+      get() {
+        return this.$store.state.formProductAdvertise.category
+      },
+      set(value) {
+        this.$store.commit('formProductAdvertise/updateCategory', value)
+      }
+    },
+    timeUnit: {
+      get() {
+        return this.$store.state.formProductAdvertise.timeUnit
+      },
+      set(value) {
+        this.$store.commit('formProductAdvertise/updateTimeUnit', value)
+      }
+    },
+    timeQuantity: {
+      get() {
+        return this.$store.state.formProductAdvertise.timeQuantity
+      },
+      set(value) {
+        this.$store.commit('formProductAdvertise/updateTimeQuantity', value)
+      }
+    },
+    itemsTimeUnit: {
+      get() {
+        return this.$store.state.formProductAdvertise.itemsTimeUnit
+      }
+    },
+    itemsCategory: {
+      get() {
+        return this.$store.state.formProductAdvertise.itemsCategory
+      }
+    },
+    money: {
+      get() {
+        return this.$store.state.formProductAdvertise.money
+      }
+    }
   },
 
   async mounted() {
-    this.products = await this.getOwnedProducts();
+    this.products = await this.getOwnedProducts()
   },
 
   methods: {
     ...mapActions({
       getOwnedProducts: 'products/getOwnedProducts',
+      setProduct: 'formProductAdvertise/setProduct'
     }),
-  },
-};
+
+    async submitForm(form) {
+      const body = {
+        name: form.name,
+        price: parseInt(form.price),
+        category: form.category,
+        description: form.description,
+        timeQuantity: parseInt(form.timeQuantity),
+        timeUnit: form.timeUnit
+      }
+      try {
+        await this.$axios.post(
+          'https://aluguei-backend.herokuapp.com/api/products',
+          body
+        )
+        // location.reload()
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+}
 </script>

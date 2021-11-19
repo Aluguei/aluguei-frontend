@@ -1,59 +1,61 @@
 <template>
-  <v-dialog v-model="isVisible" persistent max-width="600px">
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn class="btn color-white" color="primary" dark v-bind="attrs" v-on="on">
-        {{ nameButton }}
-      </v-btn>
-    </template>
-    <v-card>
-      <v-card-title>
-        <h2 class="mt-3 mb-3 mx-auto">
+  <v-dialog
+    class="rounded-xl"
+    :value="isVisible"
+    :persistent="isPersistent"
+    max-width="800"
+  >
+    <v-card class="rounded-xl">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          padding: 20px 20px 0 20px;
+        "
+      >
+        <v-btn @click="handleClose" icon dark>
+          <v-icon size="40px" color="#1B6DC1">mdi-close</v-icon>
+        </v-btn>
+      </div>
+
+      <v-card-title class="pa-0 ma-0">
+        <h2 class="mx-auto color-black" v-if="title">
           {{ title }}
         </h2>
       </v-card-title>
-      <slot></slot>
-      <div class="px-14">
-        <v-btn
-          class="btn-red mr-4 btn color-white mb-8"
-          @click="isVisible = false"
-        >
-          Fechar
-        </v-btn>
-      </div>
+      <v-card-text>
+        <slot></slot>
+      </v-card-text>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
-
 export default {
   props: {
     title: {
       type: String,
-      required: true,
+      required: false,
+      default: ''
     },
     isVisible: {
       type: Boolean,
-      required: true,
+      required: true
     },
-    nameButton: {
-      type: String,
-      required: true,
-    },
+    isPersistent: {
+      type: Boolean,
+      default: false
+    }
   },
 
   methods: {
-     ...mapActions({
-      setAnunciarDialogIsVisible: 'dialog/setIsVisible'
-    }),
-    handleClose(status) {
-      this.setAnunciarDialogIsVisible(status);
-    },
-  },
-
-  data: () => ({
-    dialog: true,
-  }),
-};
+    handleClose() {
+      this.$emit('closeDialog')
+    }
+  }
+}
 </script>
+<style>
+/** */
+</style>

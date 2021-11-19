@@ -1,23 +1,34 @@
 <template>
-  <Modal :isVisible="isVisible" title="Anunciar produto" nameButton="Anunciar">
+  <Modal isPersistent :isVisible="isVisible" @closeDialog="closeModal">
     <AdvertiseProductForm />
   </Modal>
 </template>
 
 <script>
-import Modal from "~/components/Modal";
-import AdvertiseProductForm from "~/components/AdvertiseProductForm";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from 'vuex'
+import Modal from '~/components/Modal'
+import AdvertiseProductForm from '~/components/AdvertiseProductForm'
 
 export default {
   components: {
     AdvertiseProductForm,
-    Modal,
+    Modal
   },
+
   computed: {
     ...mapGetters({
-      isVisible: "dialog/getIsVisible",
-    }),
+      isVisible: 'formProductAdvertise/getIsVisible'
+    })
   },
-};
+
+  methods: {
+    ...mapActions({
+      setIsVisible: 'formProductAdvertise/setIsVisible'
+    }),
+
+    closeModal() {
+      this.setIsVisible()
+    }
+  }
+}
 </script>

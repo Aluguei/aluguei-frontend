@@ -4,7 +4,7 @@
       <ForgotPassword :submit-form="forgotPassword" />
     </div>
     <div v-else>
-      <Loading />
+      <Waiting />
     </div>
     <v-snackbar v-model="snackbar" color="error">
       Erro. Tente Novamente! Esse CPF não foi encontrado.

@@ -1,26 +1,26 @@
 <template>
   <v-sheet class="rounded ma-8">
+    <ProductDetailModal />
     <h3 class="pa-7">Lista de Produtos</h3>
-    <div v-if="true" class="wrap-products">
-      <ProductCardListItem
-        v-for="(item, i) in availableProducts"
-        :key="i"
-        :product="item"
-      />
-    </div>
-    <div v-else class="d-flex align-center justify-center">
-      <Loading />
-    </div>
+    <v-row v-if="!isAvailableProductsLoading">
+      <v-col v-for="(item, i) in availableProducts" :key="i">
+        <ProductCardListItem
+          :product="item"
+          buttonIcon="mdi-cart"
+          @click="handleClick"
+        />
+      </v-col>
+    </v-row>
   </v-sheet>
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import ProductCardListItem from './ProductCardListItem.vue'
 
-import Loading from '~/components/Loading'
+import ProductDetailModal from '~/components/ProductDetailModal'
 
 export default {
-  components: { Loading, ProductCardListItem },
+  components: { ProductCardListItem, ProductDetailModal },
 
   computed: {
     ...mapGetters({
@@ -35,17 +35,19 @@ export default {
 
   methods: {
     ...mapActions({
-      getAvailableProducts: 'products/getAvailableProducts'
-    })
+      getAvailableProducts: 'products/getAvailableProducts',
+      setProduct: 'productDetailModal/setProduct',
+      setProductDetailModalIsVisible: 'productDetailModal/setIsVisible'
+    }),
+
+    handleClick(product) {
+      this.setProduct(product)
+      this.setProductDetailModalIsVisible()
+    }
   }
 }
 </script>
 
 <style>
-.wrap-products {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-row-gap: 1rem;
-  padding-bottom: 1rem;
-}
+/** */
 </style>

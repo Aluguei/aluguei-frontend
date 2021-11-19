@@ -1,56 +1,66 @@
 <template>
-  <v-sheet class="rounded">
-    <v-slide-group v-if="!isOwnedProductsLoading" show-arrows>
-      <v-slide-item v-for="(item, i) in products" :key="i">
-        <v-list>
-          <v-list-item-group>
-            <v-list-item>
-              <v-list-item-content>
-                <div class="text-center">
-                  <img src="@/assets/img/products/guitar/guitar-01-1.jpg" />
-                </div>
-                <p class="fs-small mb-2">{{ item.category }}</p>
-                <h4 class="mb-3">{{ item.name }}</h4>
-                <h6 class="color-orange">R${{ item.price }}</h6>
-                <a :href="`/detalhes-produto/${item.id}`">
-                  <v-btn class="mr-4 btn mt-10 color-white" type="button"> Alugar </v-btn>
-                </a>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-slide-item>
-    </v-slide-group>
-    <div v-else-if="isOwnedProductsLoading" class="d-flex align-center justify-center">
-      <div style="text-align: center">
-        <h4 class="color-gray mb-3">Carregando os produtos...</h4>
-        <img src="@/assets/img/logo/loading-logo.gif" />
+  <v-sheet class="rounded ma-8">
+    <AdvertiseProductModal />
+    <div class="d-flex">
+      <div class="fb-80">
+        <h3 class="pa-7">Sua Lista de Produtos</h3>
       </div>
+      <div class="fb-20 mr-4">
+        <v-btn class="btn mt-7 mb-7" type="button" @click="openFormModal"
+          >Anunciar Produto</v-btn
+        >
+      </div>
+    </div>
+    <v-row v-if="true">
+      <v-col v-for="(item, i) in ownedProducts" :key="i">
+        <ProductCardListItem
+          :product="item"
+          @click="handleClick"
+          buttonIcon="mdi-pencil"
+        />
+      </v-col>
+    </v-row>
+    <div v-else class="d-flex align-center justify-center">
+      <Loading />
     </div>
   </v-sheet>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex'
+import ProductCardListItem from './ProductCardListItem.vue'
+
+import AdvertiseProductModal from '~/components/AdvertiseProductModal'
+
+import Loading from '~/components/Loading'
 
 export default {
-  data: () => ({
-    products: [],
-  }),
+  components: { Loading, ProductCardListItem, AdvertiseProductModal },
 
   computed: {
     ...mapGetters({
       isOwnedProductsLoading: 'products/getIsOwnedProductsLoading',
-    }),
+      ownedProducts: 'products/getOwnedProducts'
+    })
   },
 
-  async mounted() {
-    this.products = await this.getOwnedProducts();
+  mounted() {
+    this.getOwnedProducts()
   },
 
   methods: {
     ...mapActions({
       getOwnedProducts: 'products/getOwnedProducts',
+      setFormProductAdvertiseIsVisible: 'formProductAdvertise/setIsVisible'
     }),
-  },
-};
+    handleClick(product) {
+      // seta o produto para editar na store
+      // abre o modal
+      alert(product)
+    },
+
+    openFormModal() {
+      this.setFormProductAdvertiseIsVisible()
+    }
+  }
+}
 </script>

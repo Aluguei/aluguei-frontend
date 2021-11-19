@@ -1,7 +1,7 @@
 export default {
   availableProducts: [],
-  isAvailableProductsLoading: false,
+  isAvailableProductsLoading: true,
   productsSearch: { productName: '' },
   ownedProducts: [],
-  isOwnedProductsLoading: false
+  isOwnedProductsLoading: true
 }
