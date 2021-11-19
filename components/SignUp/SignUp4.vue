@@ -29,7 +29,7 @@
           color="success"
           type="submit"
           :loading="loading"
-          :disabled="!valid && loading"
+          :disabled="!valid || loading"
           @click.stop.prevent="registerUser()"
         >
           Cadastrar
