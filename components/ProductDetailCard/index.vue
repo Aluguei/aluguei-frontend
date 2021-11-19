@@ -73,8 +73,6 @@
 <script>
 import { mapActions } from 'vuex'
 
-import api from '~/plugins/api'
-
 export default {
   props: {
     product: {
