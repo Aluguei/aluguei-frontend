@@ -1,6 +1,6 @@
 <template>
   <div class="px-14">
-    <h2 class="text-center">Anunciar Produto</h2>
+    <h2 class="text-center">Editar Produto</h2>
     <v-form
       v-model="valid"
       @submit.prevent="
@@ -74,7 +74,7 @@
         class="btn color-white"
         type="submit"
       >
-        Anunciar
+        Editar
       </v-btn>
     </v-form>
   </div>
@@ -101,65 +101,65 @@ export default {
     }),
     name: {
       get() {
-        return this.$store.state.formProductAdvertise.name
+        return this.$store.state.formEditProduct.name
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateName', value)
+        this.$store.commit('formEditProduct/updateName', value)
       }
     },
     description: {
       get() {
-        return this.$store.state.formProductAdvertise.description
+        return this.$store.state.formEditProduct.description
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateDescription', value)
+        this.$store.commit('formEditProduct/updateDescription', value)
       }
     },
     price: {
       get() {
-        return this.$store.state.formProductAdvertise.price
+        return this.$store.state.formEditProduct.price
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updatePrice', value)
+        this.$store.commit('formEditProduct/updatePrice', value)
       }
     },
     category: {
       get() {
-        return this.$store.state.formProductAdvertise.category
+        return this.$store.state.formEditProduct.category
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateCategory', value)
+        this.$store.commit('formEditProduct/updateCategory', value)
       }
     },
     timeUnit: {
       get() {
-        return this.$store.state.formProductAdvertise.timeUnit
+        return this.$store.state.formEditProduct.timeUnit
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateTimeUnit', value)
+        this.$store.commit('formEditProduct/updateTimeUnit', value)
       }
     },
     timeQuantity: {
       get() {
-        return this.$store.state.formProductAdvertise.timeQuantity
+        return this.$store.state.formEditProduct.timeQuantity
       },
       set(value) {
-        this.$store.commit('formProductAdvertise/updateTimeQuantity', value)
+        this.$store.commit('formEditProduct/updateTimeQuantity', value)
       }
     },
     itemsTimeUnit: {
       get() {
-        return this.$store.state.formProductAdvertise.itemsTimeUnit
+        return this.$store.state.formEditProduct.itemsTimeUnit
       }
     },
     itemsCategory: {
       get() {
-        return this.$store.state.formProductAdvertise.itemsCategory
+        return this.$store.state.formEditProduct.itemsCategory
       }
     },
     money: {
       get() {
-        return this.$store.state.formProductAdvertise.money
+        return this.$store.state.formEditProduct.money
       }
     }
   },
@@ -171,7 +171,7 @@ export default {
   methods: {
     ...mapActions({
       getOwnedProducts: 'products/getOwnedProducts',
-      setProduct: 'formProductAdvertise/setProduct',
+      setProduct: 'formEditProduct/setProduct',
       setSnackbar: 'snackbars/setSnackbar'
     }),
 
