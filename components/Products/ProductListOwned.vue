@@ -1,6 +1,7 @@
 <template>
   <v-sheet class="rounded ma-8">
     <AdvertiseProductModal />
+    <EditProductModal />
     <div class="d-flex">
       <div class="fb-80">
         <h3 class="pa-7">Sua Lista de Produtos</h3>
@@ -50,12 +51,14 @@ export default {
   methods: {
     ...mapActions({
       getOwnedProducts: 'products/getOwnedProducts',
-      setFormProductAdvertiseIsVisible: 'formProductAdvertise/setIsVisible'
+      setFormProductAdvertiseIsVisible: 'formProductAdvertise/setIsVisible',
+      setFormEditProductIsVisible: 'formEditProduct/setIsVisible'
     }),
     handleClick(product) {
       // seta o produto para editar na store
       // abre o modal
-      alert(product)
+      this.setFormEditProductIsVisible()
+      // alert(JSON.stringify(product))
     },
 
     openFormModal() {
