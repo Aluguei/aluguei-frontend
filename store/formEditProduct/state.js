@@ -1,4 +1,4 @@
-export default {
+export default () => ({
   isVisible: false,
   name: '',
   description: '',
@@ -9,14 +9,14 @@ export default {
   itemsTimeUnit: [
     { label: 'Hora', value: 'hourly' },
     { label: 'Dia', value: 'daily' },
-    { label: 'Semana', value: 'weekly' },
+    { label: 'Semana', value: 'weekly' }
   ],
   itemsCategory: [
     { label: 'Veiculos', value: 'vehicle' },
     { label: 'Tecnologia', value: 'technology' },
     { label: 'Ferramenta', value: 'tools' },
     { label: 'Esportes', value: 'sports' },
-    { label: 'Moda', value: 'fashion' },
+    { label: 'Moda', value: 'fashion' }
   ],
   money: {
     decimal: ',',
@@ -24,6 +24,6 @@ export default {
     prefix: 'R$ ',
     suffix: ' #',
     precision: 2,
-    masked: false,
-  },
-}
+    masked: false
+  }
+})

@@ -1,6 +1,6 @@
-export default {
+export default () => ({
   snackbars: []
-}
+})
 
 // snackbars: [
 //   {
