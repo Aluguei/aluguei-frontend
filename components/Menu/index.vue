@@ -19,11 +19,12 @@ export default {
   data: () => ({
     // selectedItem: 1,
     items: [
-      { text: "Home", link: "/" },
-      { text: "Sobre nós", link: "sobre-nos" },
-      { text: "Anunciar produto", link: "/anunciar-produto" },
-      { text: "Fale Conosco", link: "/fale-conosco" },
-    ],
-  }),
-};
+      { text: 'Home', link: '/' },
+      { text: 'Sobre nós', link: 'sobre-nos' },
+      { text: 'Anunciar produto', link: '/anunciar-produto' },
+      { text: 'FAQ', link: '/faq' },
+      { text: 'Fale Conosco', link: '/fale-conosco' }
+    ]
+  })
+}
 </script>
