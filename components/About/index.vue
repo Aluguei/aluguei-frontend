@@ -24,40 +24,40 @@
         serviços.
       </p>
       <h3 class="mt-9">Quem está por trás do Aluguei</h3>
-      <div class="d-flex mt-9">
-        <div class="text-center team-left">
+      <div class="wrap-team">
+        <div class="text-center team">
           <img
             src="~/assets/img/team/davi-marcelino.PNG"
             class="team-img"
           /><strong>Davi Marcelino</strong>
         </div>
-        <div class="text-center team-center">
+        <div class="text-center team">
           <img src="~/assets/img/team/gabriel.png" class="team-img" /><strong
             >Gabriel Alonso</strong
           >
         </div>
-        <div class="text-center team-center">
+        <div class="text-center team">
           <img src="~/assets/img/team/lucas-mori.PNG" class="team-img" /><strong
             >Lucas Mori</strong
           >
         </div>
-        <div class="text-center team-center">
+        <div class="text-center team">
           <img
             src="~/assets/img/team/lucas-william.PNG"
             class="team-img"
           /><strong>Lucas William</strong>
         </div>
-        <div class="text-center team-center">
+        <div class="text-center team">
           <img src="~/assets/img/team/maria.png" class="team-img" />
           <strong>Maria Elizabeth</strong>
         </div>
-        <div class="text-center team-center">
+        <div class="text-center team">
           <img
             src="~/assets/img/team/maycon-brollaci.PNG"
             class="team-img"
           /><strong>Maycon Brolacci</strong>
         </div>
-        <div class="text-center team-right">
+        <div class="text-center team">
           <img
             src="~/assets/img/team/samuel-ferracini.PNG"
             class="team-img"
@@ -67,3 +67,20 @@
     </div>
   </div>
 </template>
+<style>
+.wrap-team {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+</style>
