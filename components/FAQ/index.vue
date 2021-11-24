@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     all() {
-      this.panel = [...Array(this.items).keys()].map((k, i) => i)
+      this.panel = [...Array(this.items).keys()].map((_, i) => i)
     },
     none() {
       this.panel = []
