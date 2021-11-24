@@ -10,6 +10,7 @@ import ProductAdvertise from '~/pages/productAdvertise'
 import ContactUs from '~/pages/contact'
 import AboutUs from '~/pages/about'
 import ProductsList from '~/pages/productsList'
+import FAQ from '~/pages/faq'
 
 Vue.use(Router)
 
@@ -53,6 +54,10 @@ export function createRouter() {
       {
         path: '/sobre-nos',
         component: AboutUs
+      },
+      {
+        path: '/faq',
+        component: FAQ
       }
     ]
   })

@@ -14,8 +14,8 @@
                   : {}
               "
               class="color-white font-weight-medium fs-small"
-              v-text="item.text"
               @click="handleClick(item)"
+              v-text="item.text"
             />
           </v-list-item-content>
         </v-list-item>
