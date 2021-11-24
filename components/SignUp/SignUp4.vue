@@ -14,7 +14,6 @@
         <v-text-field
           v-model="phoneOne"
           v-mask="'(##) # ####-####'"
-          :rules="phoneOneRules"
           label="Telefone primário"
           required
         />
@@ -29,7 +28,6 @@
           color="success"
           type="submit"
           :loading="loading"
-          :disabled="!valid || loading"
           @click.stop.prevent="registerUser()"
         >
           Cadastrar
@@ -59,8 +57,7 @@ export default {
     loading: false,
     valid: false,
     phoneOne: null,
-    phoneTwo: null,
-    phoneOneRules: [(v) => !!v || 'Telefone primário é obrigatório']
+    phoneTwo: null
   }),
   mounted() {
     this.phoneOne = this.$store.state.signupStore.userRegister.phoneOne || ''
