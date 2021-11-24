@@ -14,68 +14,63 @@
         })
       "
     >
-      <v-row>
-        <v-col cols="12" sm="12" md="12">
-          <v-text-field
-            v-model="name"
-            label="Nome"
-            required
-            :rules="nomeRules"
-          />
-        </v-col>
-        <v-col cols="12" sm="12" md="12">
-          <v-textarea
-            v-model="description"
-            label="Descrição"
-            required
-            :rules="descricaoRules"
-          />
-        </v-col>
-        <v-col cols="12" sm="6" md="6">
-          <v-select
-            v-model="category"
-            item-value="value"
-            item-text="label"
-            :items="itemsCategory"
-            label="Categoria"
-            required
-          />
-        </v-col>
-        <v-col cols="12" sm="6" md="6">
-          <v-text-field
-            v-model="price"
-            label="Valor"
-            required
-            :rules="valorRules"
-          />
-        </v-col>
-        <v-col cols="12" sm="6" md="6">
-          <v-text-field
-            v-model="timeQuantity"
-            label="Tempo"
-            required
-            :rules="tempoRules"
-          />
-        </v-col>
-        <v-col cols="12" sm="6" md="6">
-          <v-select
-            v-model="timeUnit"
-            item-value="value"
-            item-text="label"
-            :items="itemsTimeUnit"
-            label="Por"
-            required
-          />
-        </v-col>
-      </v-row>
-      <v-btn
-        :loading="loading"
-        :disabled="loading"
-        class="btn color-white"
-        type="submit"
-      >
-        Editar
-      </v-btn>
+      <v-col cols="12" sm="12" md="12">
+        <v-text-field v-model="name" label="Nome" required :rules="nomeRules" />
+      </v-col>
+      <v-col cols="12" sm="12" md="12">
+        <v-textarea
+          v-model="description"
+          label="Descrição"
+          required
+          :rules="descricaoRules"
+        />
+      </v-col>
+      <v-col cols="12" sm="6" md="6">
+        <v-select
+          v-model="category"
+          item-value="value"
+          item-text="label"
+          :items="itemsCategory"
+          label="Categoria"
+          required
+        />
+      </v-col>
+      <v-col cols="12" sm="6" md="6">
+        <v-text-field
+          v-model="price"
+          label="Valor"
+          required
+          :rules="valorRules"
+        />
+      </v-col>
+      <v-col cols="12" sm="6" md="6">
+        <v-text-field
+          v-model="timeQuantity"
+          label="Tempo"
+          required
+          :rules="tempoRules"
+        />
+      </v-col>
+      <v-col cols="12" sm="6" md="6">
+        <v-select
+          v-model="timeUnit"
+          item-value="value"
+          item-text="label"
+          :items="itemsTimeUnit"
+          label="Por"
+          required
+        />
+      </v-col>
+      <v-col offset="4" cols="3">
+        <v-btn
+          :loading="loading"
+          :disabled="loading"
+          class="btn color-white"
+          type="submit"
+        >
+          Editar
+        </v-btn>
+      </v-col>
     </v-form>
   </div>
 </template>

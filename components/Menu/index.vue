@@ -5,7 +5,16 @@
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.link" link>
           <v-list-item-content>
             <v-list-item-title
+              :style="
+                item.isActive
+                  ? {
+                      'border-bottom': '1px solid white',
+                      'padding-bottom': '3px'
+                    }
+                  : {}
+              "
               class="color-white font-weight-medium fs-small"
+              @click="handleClick(item)"
               v-text="item.text"
             />
           </v-list-item-content>
@@ -15,16 +24,23 @@
   </v-card>
 </template>
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-  data: () => ({
-    // selectedItem: 1,
-    items: [
-      { text: 'Home', link: '/' },
-      { text: 'Sobre nós', link: 'sobre-nos' },
-      { text: 'Anunciar produto', link: '/anunciar-produto' },
-      { text: 'FAQ', link: '/faq' },
-      { text: 'Fale Conosco', link: '/fale-conosco' }
-    ]
-  })
+  computed: {
+    ...mapGetters({
+      items: 'navbarItems/getItems'
+    })
+  },
+
+  methods: {
+    ...mapActions({
+      setCurrentItem: 'navbarItems/setCurrentItem'
+    }),
+
+    handleClick(item) {
+      this.setCurrentItem(item.link)
+    }
+  }
 }
 </script>

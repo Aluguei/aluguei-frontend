@@ -7,17 +7,17 @@
         <h3 class="pa-7">Sua Lista de Produtos</h3>
       </div>
       <div class="fb-20 mr-4">
-        <v-btn class="btn mt-7 mb-7" type="button" @click="openFormModal"
-          >Anunciar Produto</v-btn
-        >
+        <v-btn class="btn mt-7 mb-7" type="button" @click="openFormModal">
+          Anunciar Produto
+        </v-btn>
       </div>
     </div>
     <v-row v-if="true">
       <v-col v-for="(item, i) in ownedProducts" :key="i">
         <ProductCardListItem
           :product="item"
-          @click="handleClick"
           buttonIcon="mdi-pencil"
+          @click="handleClick"
         />
       </v-col>
     </v-row>
@@ -54,11 +54,8 @@ export default {
       setFormProductAdvertiseIsVisible: 'formProductAdvertise/setIsVisible',
       setFormEditProductIsVisible: 'formEditProduct/setIsVisible'
     }),
-    handleClick(product) {
-      // seta o produto para editar na store
-      // abre o modal
+    handleClick() {
       this.setFormEditProductIsVisible()
-      // alert(JSON.stringify(product))
     },
 
     openFormModal() {
